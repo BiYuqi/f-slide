@@ -1,0 +1,30 @@
+{
+  "name": "f-slide",
+  "version": "1.0.0",
+  "description": "A simple web presentation tool",
+  "main": "index.js",
+  "scripts": {
+  },
+  "engines": {
+    "node": ">=8"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BiYuqi/f-slide.git"
+  },
+  "keywords": [
+    "presentation",
+    "poserpoint",
+    "slide",
+    "keynote",
+    "webpack",
+    "markdown-it",
+    "markdown"
+  ],
+  "author": "biyuqiwan@163.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BiYuqi/f-slide/issues"
+  },
+  "homepage": "https://github.com/BiYuqi/f-slide#readme"
+}
