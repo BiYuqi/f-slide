@@ -1,0 +1,57 @@
+{
+	"name": "mdppt-serve",
+	"version": "0.0.0",
+	"description": "A webpack serve and build tool",
+	"main": "./index.js",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/ftb/mdppt.git"
+	},
+	"keywords": [
+		"webpack",
+		"serve",
+		"build"
+	],
+	"author": "biyuqiwan@163.com",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/ftb/mdppt/issues"
+	},
+	"homepage": "https://github.com/ftb/mdppt#readme",
+	"dependencies": {
+		"@babel/core": "^7.7.2",
+		"@babel/preset-env": "^7.7.1",
+		"babel-loader": "^8.0.6",
+		"cross-env": "^5.2.1",
+		"css-loader": "^2.1.1",
+		"ejs": "^2.7.4",
+		"glob": "^7.1.6",
+		"html-loader": "^0.5.5",
+		"html-webpack-plugin": "^3.2.0",
+		"markdown-loader": "^5.1.0",
+		"mini-css-extract-plugin": "^0.7.0",
+		"node-sass": "^4.13.0",
+		"optimize-css-assets-webpack-plugin": "^5.0.3",
+		"sass-loader": "^7.3.1",
+		"shelljs": "^0.8.3",
+		"style-loader": "^0.23.1",
+		"uglifyjs-webpack-plugin": "^2.2.0",
+		"webpack": "^4.41.2",
+		"webpack-cli": "^3.3.10",
+		"webpack-dev-server": "^3.9.0",
+		"webpack-merge": "^4.2.2"
+	},
+	"babel": {
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "modules": "commonjs",
+          "targets": {
+            "node": "current"
+          }
+        }
+      ]
+    ]
+  }
+}
