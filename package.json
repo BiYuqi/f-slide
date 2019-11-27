@@ -1,31 +1,11 @@
 {
-  "name": "root",
   "private": true,
-  "description": "A simple web presentation tool",
-  "main": "index.js",
-  "scripts": {},
+  "workspaces": [
+    "packages/*"
+  ],
   "engines": {
     "node": ">=8"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ftbjs/mdppt.git"
-  },
-  "keywords": [
-    "presentation",
-    "poserpoint",
-    "slide",
-    "keynote",
-    "webpack",
-    "markdown-it",
-    "markdown"
-  ],
-  "author": "biyuqiwan@163.com",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/ftbjs/mdppt.git/issues"
-  },
-  "homepage": "https://github.com/ftbjs/mdppt.git#readme",
   "dependencies": {
     "lerna": "^3.15.0"
   }
