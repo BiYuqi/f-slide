@@ -1,10 +1,8 @@
 {
+  "name": "mdppt",
   "private": true,
-  "workspaces": [
-    "packages/*"
-  ],
-  "engines": {
-    "node": ">=8"
+  "scripts": {
+    "install:dev": "lerna bootstrap"
   },
   "dependencies": {
     "lerna": "^3.15.0"

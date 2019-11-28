@@ -1,19 +1,16 @@
-const path = require('path')
 const webpack = require('webpack')
 const webpackMerge = require('webpack-merge')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const webpackBaseConfig = require('./base')
+const resolveCwd = require('../util/resolveCwd')
 
 module.exports = webpackMerge(webpackBaseConfig, {
   mode: 'production',
-  entry: {
-    main: path.resolve(__dirname, '../lib/index.js')
-  },
   output: {
-    path: path.resolve(__dirname, '../dist'),
-    filename: '[name].js'
+    path: resolveCwd('dist'),
+    filename: 'js/[name].[contenthash:8].js'
   },
   optimization: {
     splitChunks: {},
@@ -36,7 +33,7 @@ module.exports = webpackMerge(webpackBaseConfig, {
     new webpack.HashedModuleIdsPlugin(),
 
     new MiniCssExtractPlugin({
-      filename: '[name].css'
+      filename: 'css/[name].css'
     })
   ]
 })

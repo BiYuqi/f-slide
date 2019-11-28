@@ -2,26 +2,33 @@ const path = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const devMode = process.env.NODE_ENV === 'development'
-const { resolveLocal } = require('../lib')
+const resolveLocal = require('../util/resolveLocal')
+const resolveCwd = require('../util/resolveCwd')
 
 module.exports = {
+  entry: {
+    main: resolveLocal('../../src/index.js')
+  },
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
+        test: /\.m?jsx?$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader'
+          loader: 'babel-loader',
+          options: {
+            presets: [resolveLocal('../../node_modules/@babel/preset-env')]
+          }
         }
       },
       {
         test: /\.md$/,
         use: [
           {
-            loader: 'markdown-loader'
+            loader: 'html-loader'
           },
           {
-            loader: 'html-loader'
+            loader: 'markdown-loader'
           }
         ]
       },
@@ -46,20 +53,19 @@ module.exports = {
   },
   resolve: {
     extensions: ['.js', '.jsx', '.json'],
-    modules: ['node_modules', process.cwd() + 'node_modules', resolveLocal('../node_modules')],
+    modules: ['node_modules', resolveLocal('../../node_modules')],
     symlinks: false
   },
   resolveLoader: {
-    modules: ['node_modules', process.cwd() + 'node_modules', resolveLocal('../node_modules')]
+    modules: ['node_modules', resolveLocal('../../node_modules')]
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, '../public/index.ejs'),
-      filename: path.resolve(__dirname, '../dist/index.html'),
-      favicon: path.resolve(__dirname, '../public/favicon.ico'),
+      template: resolveLocal('../../public/index.ejs'),
+      filename: resolveCwd('dist/index.html'),
+      favicon: resolveLocal('../../public/favicon.ico'),
       inject: true,
       templateParameters: (compilation, assets, pluginOptions) => {
-        console.log(pluginOptions)
         // enhance html-webpack-plugin's built in template params
         let stats;
         return Object.assign({

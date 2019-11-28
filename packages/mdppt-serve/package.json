@@ -2,7 +2,7 @@
 	"name": "mdppt-serve",
 	"version": "0.0.0",
 	"description": "A webpack serve and build tool",
-	"main": "./index.js",
+	"main": "./lib/serve.js",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/ftb/mdppt.git"
@@ -40,18 +40,5 @@
 		"webpack-cli": "^3.3.10",
 		"webpack-dev-server": "^3.9.0",
 		"webpack-merge": "^4.2.2"
-	},
-	"babel": {
-    "presets": [
-      [
-        "@babel/preset-env",
-        {
-          "modules": "commonjs",
-          "targets": {
-            "node": "current"
-          }
-        }
-      ]
-    ]
-  }
+	}
 }

@@ -7,7 +7,7 @@ module.exports = () => {
       throw err
     }
     if (stats.hasErrors()) {
-      console.log('[mdppt]', stats.toString());
+      console.log('Mdppt project got build error', stats.toString());
     }
     process.stdout.write(stats.toString({
           colors: true,
