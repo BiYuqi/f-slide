@@ -1,11 +1,10 @@
-const path = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const devMode = process.env.NODE_ENV === 'development'
 const resolveLocal = require('../util/resolveLocal')
 const resolveCwd = require('../util/resolveCwd')
 
-module.exports = {
+module.exports = (api) => ({
   entry: {
     main: resolveLocal('../../src/index.js')
   },
@@ -28,7 +27,7 @@ module.exports = {
             loader: 'html-loader'
           },
           {
-            loader: 'markdown-loader'
+            loader: 'mdppt-parser'
           }
         ]
       },
@@ -61,17 +60,17 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: resolveLocal('../../public/index.ejs'),
+      template: api.getEntry(),
       filename: resolveCwd('dist/index.html'),
       favicon: resolveLocal('../../public/favicon.ico'),
       inject: true,
       templateParameters: (compilation, assets, pluginOptions) => {
         // enhance html-webpack-plugin's built in template params
-        let stats;
+        let stats
         return Object.assign({
             // make stats lazy as it is expensive
             get webpack() {
-                return stats || (stats = compilation.getStats().toJson());
+                return stats || (stats = compilation.getStats().toJson())
             },
             compilation: compilation,
             webpackConfig: compilation.options,
@@ -83,4 +82,4 @@ module.exports = {
       }
     })
   ]
-}
+})

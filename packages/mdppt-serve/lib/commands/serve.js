@@ -1,9 +1,9 @@
 const webpack = require('webpack')
 const WebpackDevServer = require('webpack-dev-server')
-const defaultDevConfig = require('../config/dev')
+const devConfig = require('../config/dev')
 const resolveCwd = require('../util/resolveCwd')
 
-module.exports = (entry, cmd) => {
+module.exports = (api) => {
   const options = {
     contentBase: resolveCwd('dist/index.html'),
     open: true,
@@ -13,13 +13,13 @@ module.exports = (entry, cmd) => {
     hot: true,
     disableHostCheck: true
   }
-
+  const defaultDevConfig = devConfig(api)
   WebpackDevServer.addDevServerEntrypoints(defaultDevConfig, options);
   
   const compiler = webpack(defaultDevConfig)
   const devServer = new WebpackDevServer(compiler, options)
   
   devServer.listen(8080, 'localhost', () => {
-    console.log('Mdppt project is starting server at http://localhost:8080')
+    console.log('Mdppt is starting server at http://localhost:8080')
   })
 }

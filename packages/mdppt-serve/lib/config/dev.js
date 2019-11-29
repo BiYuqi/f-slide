@@ -3,7 +3,7 @@ const webpack = require('webpack')
 const baseWebpackConfig = require('./base')
 const resolveCwd = require('../util/resolveCwd')
 
-const webpackConfig = merge(baseWebpackConfig, {
+module.exports = (api) => merge(baseWebpackConfig(api), {
   mode: 'development',
   devtool: 'inline-source-map',
   output: {
@@ -24,5 +24,3 @@ const webpackConfig = merge(baseWebpackConfig, {
     new webpack.HotModuleReplacementPlugin()
   ]
 })
-
-module.exports = webpackConfig

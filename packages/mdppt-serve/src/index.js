@@ -1,1 +1,0 @@
-document.querySelector('#mdppt').innerHTML= require('./index.md')
