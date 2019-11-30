@@ -5,7 +5,7 @@ const resolveCwd = require('../util/resolveCwd')
 
 module.exports = api => ({
   entry: {
-    main: resolveLocal('../../src/index.js')
+    [api.config.appName]: resolveLocal('../../src/index.js')
   },
   module: {
     rules: [
@@ -34,7 +34,7 @@ module.exports = api => ({
         test: /\.(sa|sc|c)ss$/,
         use: [
           {
-            loader: api.mode === 'development' ? 'style-loader' : MiniCssExtractPlugin.loader
+            loader: api.config.mode === 'development' ? 'style-loader' : MiniCssExtractPlugin.loader
           },
           {
             loader: 'css-loader'
@@ -81,7 +81,7 @@ module.exports = api => ({
   plugins: [
     new HtmlWebpackPlugin({
       template: api.getEntry(),
-      filename: resolveCwd(api.context, 'dist/index.html'),
+      filename: resolveCwd(api.context, `/${api.config.outputDir}/index.html`),
       favicon: resolveLocal('../../public/favicon.ico'),
       inject: true,
       templateParameters: (compilation, assets, pluginOptions) => {

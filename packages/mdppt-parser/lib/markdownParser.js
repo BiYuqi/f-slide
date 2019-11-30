@@ -1,18 +1,18 @@
 const markdownIt = require('markdown-it')
 const prism = require('markdown-it-prism')
-const parseSliderRule = /<slide([^>]*?)>([\s\S]+?)<\/slide>/igm
-const parseAttrs = /([\w:]+)="([^"]+)"/igm
+const parseSliderRule = /<slide([^>]*?)>([\s\S]+?)<\/slide>/gim
+const parseAttrs = /([\w:]+)="([^"]+)"/gim
 
 const mdRender = markdownIt()
 
 mdRender.use(prism)
 
-module.exports = (context) => {
+module.exports = context => {
   let matchResult
   const result = []
   const htmlResult = []
 
-  while(matchResult = parseSliderRule.exec(context)) {
+  while ((matchResult = parseSliderRule.exec(context))) {
     result.push({
       slideContect: matchResult[1],
       mdContent: matchResult[2]

@@ -4,7 +4,7 @@ author: 'BiYuqi'
 url: https://github.com/ftb/mdppt
 codeStyle: 'prism-tomorrow'
 ---
-<slide class="dark puple" image="test__url" :class="child">
+<slide class="dark puple" image="test__url">
 # M D P P T
 
 ```js

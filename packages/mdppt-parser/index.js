@@ -8,7 +8,7 @@ const defaultConfig = require('./default')
 const template = fs.readFileSync(path.resolve(__dirname, './template/index.hbs')).toString()
 module.exports = function(content) {
   const globalSetting = { ...defaultConfig, ...ymlParser(content) }
-  const { html, slideCount} = mdParser(content)
+  const { html, slideCount } = mdParser(content)
   const data = {
     content: html
   }

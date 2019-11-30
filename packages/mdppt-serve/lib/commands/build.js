@@ -2,7 +2,7 @@ const webpack = require('webpack')
 const prodConfig = require('../config/build')
 
 module.exports = api => {
-  api.mode = 'production'
+  api.config.mode = 'production'
   webpack(prodConfig(api), function(err, stats) {
     if (err) {
       throw err

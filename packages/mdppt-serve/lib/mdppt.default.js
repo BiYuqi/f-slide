@@ -1,4 +1,6 @@
 module.exports = {
+  appName: 'main',
+
   baseUrl: '/',
 
   outputDir: 'dist',
@@ -7,16 +9,11 @@ module.exports = {
 
   indexPath: 'index.html',
 
-  filenameHashing: true,
-
-  runtimeCompiler: false,
-
   productionSourceMap: false,
 
   devServer: {
     host: '0.0.0.0',
     port: 8080,
-    https: false,
     open: true,
     hot: true
   }

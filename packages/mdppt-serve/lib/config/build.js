@@ -10,8 +10,8 @@ module.exports = api =>
   webpackMerge(baseWebpackConfig(api), {
     mode: 'production',
     output: {
-      publicPath: '/',
-      path: resolveCwd(api.context, 'dist'),
+      publicPath: api.config.baseUrl,
+      path: resolveCwd(api.context, api.config.outputDir),
       filename: 'js/[name].[contenthash:8].js',
       chunkFilename: 'js/[name].[id].[chunkhash].js'
     },

@@ -8,8 +8,8 @@ module.exports = api =>
     mode: 'development',
     devtool: 'inline-source-map',
     output: {
-      publicPath: '/',
-      path: resolveCwd(api.context, 'dist'),
+      publicPath: api.config.baseUrl,
+      path: resolveCwd(api.context, api.config.outputDir),
       filename: '[name].js'
     },
     plugins: [new webpack.HotModuleReplacementPlugin()]
