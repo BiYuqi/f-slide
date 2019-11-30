@@ -5,13 +5,14 @@ const resolveCwd = require('../util/resolveCwd')
 
 module.exports = api => {
   const options = {
-    contentBase: resolveCwd(api.context, 'dist/index.html'),
+    contentBase: [resolveCwd(api.context, 'dist'), resolveCwd(api.context, api.getEntry())],
     open: true,
     publicPath: '/',
     compress: true,
     noInfo: true,
     hot: true,
     disableHostCheck: true,
+    watchContentBase: true,
     inline: true
   }
   const defaultDevConfig = devConfig(api)
