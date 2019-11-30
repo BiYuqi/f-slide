@@ -1,8 +1,8 @@
 const webpack = require('webpack')
-const defaultProdConfig = require('../config/build')
+const prodConfig = require('../config/build')
 
-module.exports = () => {
-  webpack(defaultProdConfig, function (err, stats) {
+module.exports = (api) => {
+  webpack(prodConfig(api), function (err, stats) {
     if (err) {
       throw err
     }

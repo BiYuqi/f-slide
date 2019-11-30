@@ -5,7 +5,7 @@ const resolveCwd = require('../util/resolveCwd')
 
 module.exports = (api) => {
   const options = {
-    contentBase: resolveCwd('dist/index.html'),
+    contentBase: resolveCwd(api.context, 'dist/index.html'),
     open: true,
     publicPath: '/',
     compress: true,
