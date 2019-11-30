@@ -5,19 +5,23 @@ url: https://github.com/ftb/mdppt
 codeStyle: 'atelier-lakeside-light'
 ---
 <slide class="dark puple" image="test__url" :class="child">
-# Demo
+# M D P P T
 
 ```js
-const a = 'b'
+npm install mdppt -g
+
+mdppt serve mdppt.md
+
+mdppt build mdppt.md
 ```
 </slide>
 
 <slide>
-# Demo
+# 第二页
 
-```js
-const a = 'c'
-```
-lllll
-pppp
+- 2016
+- 2017
+- 2018
+- 2019
+- 2020...
 </slide>
