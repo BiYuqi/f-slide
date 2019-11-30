@@ -10,6 +10,7 @@
   "license": "MIT",
   "dependencies": {
     "handlebars": "^4.5.3",
+    "highlight.js": "^9.16.2",
     "js-yaml": "^3.13.1",
     "markdown-it": "^10.0.0"
   }

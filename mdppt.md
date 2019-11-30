@@ -1,11 +1,9 @@
 ---
-title: f-slide - 网页版演示库
-speaker: LoadingMore
-url: https://github.com/BiYuqi/f-slide
-js:
-    - https://www.echartsjs.com/asset/theme/infographic.js
+title: Mdppt - 网页版演示库
+author: 'BiYuqi'
+url: https://github.com/ftb/mdppt
+codeStyle: 'atelier-lakeside-light'
 ---
-
 <slide class="dark puple" image="test__url" :class="child">
 # Demo
 
