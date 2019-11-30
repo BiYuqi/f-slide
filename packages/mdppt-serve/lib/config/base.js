@@ -1,6 +1,5 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const devMode = process.env.NODE_ENV === 'development'
 const resolveLocal = require('../util/resolveLocal')
 const resolveCwd = require('../util/resolveCwd')
 
@@ -35,16 +34,13 @@ module.exports = api => ({
         test: /\.(sa|sc|c)ss$/,
         use: [
           {
-            loader: devMode ? 'style-loader' : MiniCssExtractPlugin.loader
+            loader: api.mode === 'development' ? 'style-loader' : MiniCssExtractPlugin.loader
           },
           {
             loader: 'css-loader'
           },
           {
             loader: 'sass-loader'
-          },
-          {
-            loader: 'postcss-loader'
           }
         ]
       },
