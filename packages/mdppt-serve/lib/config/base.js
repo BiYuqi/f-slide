@@ -75,7 +75,7 @@ module.exports = api => ({
     ]
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.json'],
+    extensions: ['.js', '.jsx', '.json', '.md'],
     modules: ['node_modules', resolveLocal('../../node_modules')],
     symlinks: false
   },

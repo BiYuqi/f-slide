@@ -2,7 +2,7 @@
 title: Mdppt - 网页版演示库
 author: 'BiYuqi'
 url: https://github.com/ftb/mdppt
-codeStyle: 'atelier-lakeside-light'
+codeStyle: 'prism-tomorrow'
 ---
 <slide class="dark puple" image="test__url" :class="child">
 # M D P P T
@@ -24,4 +24,17 @@ mdppt build mdppt.md
 - 2018
 - 2019
 - 2020...
+</slide>
+
+<slide>
+# 第三页
+
+```js
+export default {
+  title: 'Mdppt - Markdown演示PPT',
+  author: 'LoadingMore',
+  codeStyle: 'prism-dark',
+  theme: ''
+}
+```
 </slide>

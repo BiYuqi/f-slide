@@ -1,6 +1,6 @@
 module.exports = {
   title: 'Mdppt - Markdown演示PPT',
   author: 'LoadingMore',
-  codeStyle: 'atelier-lakeside-light',
+  codeStyle: 'prism-tomorrow',
   theme: ''
 }

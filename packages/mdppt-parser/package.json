@@ -12,6 +12,7 @@
     "handlebars": "^4.5.3",
     "highlight.js": "^9.16.2",
     "js-yaml": "^3.13.1",
-    "markdown-it": "^10.0.0"
+    "markdown-it": "^10.0.0",
+    "markdown-it-prism": "^2.0.3"
   }
 }

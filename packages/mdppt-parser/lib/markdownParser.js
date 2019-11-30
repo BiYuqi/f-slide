@@ -1,20 +1,11 @@
 const markdownIt = require('markdown-it')
-const hljs = require('highlight.js')
-
+const prism = require('markdown-it-prism')
 const parseSliderRule = /<slide([^>]*?)>([\s\S]+?)<\/slide>/igm
 const parseAttrs = /([\w:]+)="([^"]+)"/igm
 
-const mdRender = markdownIt({
-  html: true,
-  highlight: function(str, lang) {
-    if (lang && hljs.getLanguage(lang)) {
-      try {
-        return hljs.highlight(lang, str).value
-      } catch (__) {}
-    }
-    return ''
-  }
-})
+const mdRender = markdownIt()
+
+mdRender.use(prism)
 
 module.exports = (context) => {
   let matchResult
@@ -39,11 +30,16 @@ module.exports = (context) => {
       </section>
     `)
   }
-  return `
+  const html = `
     <div id="mdppt">
       <div class="mdppt-content">
         ${htmlResult.join('\n')}
       </div>
     </div>
   `
+
+  return {
+    html,
+    slideCount: htmlResult.length
+  }
 }

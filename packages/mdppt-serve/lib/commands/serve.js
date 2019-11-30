@@ -11,7 +11,8 @@ module.exports = api => {
     compress: true,
     noInfo: true,
     hot: true,
-    disableHostCheck: true
+    disableHostCheck: true,
+    inline: true
   }
   const defaultDevConfig = devConfig(api)
   WebpackDevServer.addDevServerEntrypoints(defaultDevConfig, options)
