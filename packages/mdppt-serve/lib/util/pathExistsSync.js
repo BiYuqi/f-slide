@@ -2,7 +2,7 @@ const fs = require('fs-extra')
 const path = require('path')
 
 module.exports = (context, files) => {
-  if (files & typeof files === 'string') {
+  if (files & (typeof files === 'string')) {
     if (fs.pathExistsSync(path.join(context, file))) {
       return files
     }

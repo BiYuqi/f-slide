@@ -4,7 +4,7 @@ const devMode = process.env.NODE_ENV === 'development'
 const resolveLocal = require('../util/resolveLocal')
 const resolveCwd = require('../util/resolveCwd')
 
-module.exports = (api) => ({
+module.exports = api => ({
   entry: {
     main: resolveLocal('../../src/index.js')
   },
@@ -91,16 +91,16 @@ module.exports = (api) => ({
       templateParameters: (compilation, assets, pluginOptions) => {
         let stats
         return Object.assign({
-            get webpack() {
-                return stats || (stats = compilation.getStats().toJson())
-            },
-            compilation: compilation,
-            webpackConfig: compilation.options,
-            htmlWebpackPlugin: {
-                files: assets,
-                options: pluginOptions
-            }
-        });
+          get webpack() {
+            return stats || (stats = compilation.getStats().toJson())
+          },
+          compilation: compilation,
+          webpackConfig: compilation.options,
+          htmlWebpackPlugin: {
+            files: assets,
+            options: pluginOptions
+          }
+        })
       }
     })
   ]

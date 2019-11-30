@@ -3,9 +3,7 @@
 const program = require('commander')
 const chalk = require('chalk')
 
-program
-  .version(require('../package').version, '-v, --version')
-  .usage(`${chalk.green('<command>')} [options]`)
+program.version(require('../package').version, '-v, --version').usage(`${chalk.green('<command>')} [options]`)
 
 program
   .command('new [file]')

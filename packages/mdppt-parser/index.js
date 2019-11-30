@@ -7,7 +7,7 @@ const defaultConfig = require('./default')
 
 const markdown = require('markdown-it')({
   html: true,
-  highlight: function (str, lang) {
+  highlight: function(str, lang) {
     if (lang && hljs.getLanguage(lang)) {
       try {
         return hljs.highlight(lang, str).value
@@ -21,11 +21,11 @@ const markdown = require('markdown-it')({
 // const getAttrs = /([\w:]+)="([^"]+)"/ig
 
 const template = fs.readFileSync(path.resolve(__dirname, './template/index.hbs')).toString()
-module.exports = function (content) {
+module.exports = function(content) {
   const result = markdown.render(content)
-  const globalSetting = { ...defaultConfig, ...ymlParser(content)}
+  const globalSetting = { ...defaultConfig, ...ymlParser(content) }
   const data = {
     content: result
   }
-  return handlebars.compile(template)({ ...globalSetting, ...data})
+  return handlebars.compile(template)({ ...globalSetting, ...data })
 }
