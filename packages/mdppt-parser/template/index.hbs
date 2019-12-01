@@ -5,7 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link href="https://cdn.bootcss.com/prism/9000.0.1/themes/{{codeStyle}}.min.css" rel="stylesheet">
+  {{#if author}}
   <title>{{author}} | {{title}}</title>
+  {{else}}
+  <title>{{title}}</title>
+  {{/if}}
 </head>
 <body>
   {{{content}}}
