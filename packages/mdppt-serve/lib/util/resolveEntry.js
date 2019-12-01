@@ -13,7 +13,7 @@ const resolveEntry = (entry, cmd) => {
   }
 
   if (!fs.pathExistsSync(path.resolve(context, entry))) {
-    console.log(chalk.red(`Faild to found the entry file in ${chalk.yellow(context)}`))
+    console.log(chalk.red(`The file you provided is not a validate markdown file.`))
     process.exit(1)
   }
 

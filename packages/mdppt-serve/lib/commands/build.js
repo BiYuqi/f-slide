@@ -1,4 +1,5 @@
 const webpack = require('webpack')
+const chalk = require('chalk')
 const prodConfig = require('../config/build')
 
 module.exports = api => {
@@ -8,7 +9,7 @@ module.exports = api => {
       throw err
     }
     if (stats.hasErrors()) {
-      console.log('Mdppt project got build error', stats.toString())
+      console.log(chalk.red('Mdppt project got build error', stats.toString()))
     }
     process.stdout.write(
       stats.toString({

@@ -20,7 +20,9 @@ module.exports = context => {
   }
 
   if (result.length <= 0) {
-    return '<div>Not Slide Found</div>'
+    return {
+      html: '<div>Could not find a validate markdown file. Please read the guide.</div>'
+    }
   }
 
   for (let i = 0; i < result.length; i++) {

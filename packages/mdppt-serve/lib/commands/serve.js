@@ -36,6 +36,6 @@ module.exports = api => {
   const devServer = new WebpackDevServer(compiler, options)
 
   devServer.listen(8080, 'localhost', () => {
-    console.log(`Mdppt is starting at ${chalk.green('http://localhost:8080')}`)
+    console.log(`${chalk.cyanBright('Mdppt is starting at:')} ${chalk.green('http://localhost:8080')}`)
   })
 }

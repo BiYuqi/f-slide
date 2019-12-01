@@ -5,6 +5,10 @@ const defaultConfig = require('../default')
 module.exports = content => {
   const parseRule = /---([\s\S]+?)---/
   const matchYml = content.match(parseRule)
+
+  if (!matchYml) {
+    return {}
+  }
   const parsedYml = jsYaml.load(matchYml[1])
 
   if (!codeStyleValidate.includes(parsedYml.codeStyle)) {
