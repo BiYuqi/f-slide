@@ -2,7 +2,7 @@
 title: Mdppt - 网页版演示库
 author: 'BiYuqi'
 url: https://github.com/ftb/mdppt
-codeStyle: 'prism-tomorrow'
+codeStyle: 'tomorrow'
 ---
 <slide class="dark puple" class="light" :class="center" image="test__url">
 # M D P P T

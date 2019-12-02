@@ -1,1 +1,17 @@
 @import './reset.scss';
+
+.mdppt {
+  height: 100vh;
+
+  .mdppt-content {
+    height: 100vh;
+  }
+
+  .mdppt-slide {
+    height: 100vh;
+    padding: 5rem;
+    &__sub {
+      height: 100vh;
+    }
+  }
+}

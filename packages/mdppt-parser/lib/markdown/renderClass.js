@@ -1,6 +1,8 @@
-module.exports = (data) => {
+module.exports = (data, config) => {
   if (!data) {
-    return ''
+    return `class="${config}"`
   }
-  return `class="${data}"`
+  data = data.join(' ').split(' ')
+  const classNames = [...new Set([config, ...data])]
+  return `class="${classNames.join(' ').trim()}"`
 }

@@ -10,10 +10,12 @@ module.exports = content => {
     return {}
   }
   const parsedYml = jsYaml.load(matchYml[1])
+  const isPrism = parsedYml.codeStyle === 'prism'
 
   if (!codeStyleValidate.includes(parsedYml.codeStyle)) {
     parsedYml.codeStyle = defaultConfig.codeStyle
   }
+  parsedYml.codeStyle = isPrism ? 'prism' : `prism-${parsedYml.codeStyle}`
 
   return parsedYml
 }
