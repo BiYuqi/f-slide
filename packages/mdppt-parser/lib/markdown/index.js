@@ -1,12 +1,7 @@
-const markdownIt = require('markdown-it')
-const prism = require('markdown-it-prism')
 const renderClass = require('./renderClass')
 const structuredSource = require('./structuredSource')
 
-const mdRender = markdownIt()
-mdRender.use(prism)
-
-module.exports = context => {
+module.exports = (md,context) => {
   const htmlResult = []
   const structuredSourceData = structuredSource(context)
 
@@ -21,7 +16,7 @@ module.exports = context => {
     htmlResult.push(`
       <section ${renderClass(tempStructedData.slideContect.class, 'mdppt-slide')}>
         <div ${renderClass(tempStructedData.slideContect.subClass, 'mdppt-slide__sub')}>
-          ${mdRender.render(tempStructedData.mdContent)}
+          ${md.render(tempStructedData.mdContent)}
         </div>
       </section>
     `)
