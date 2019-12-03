@@ -1,5 +1,10 @@
 @import './reset.scss';
 @import './common.scss';
+@import './width';
+@import './bgColor';
+@import './textColor';
+@import './size';
+@import './layout';
 
 .mdppt {
   height: 100vh;
@@ -9,10 +14,16 @@
   }
 
   .mdppt-slide {
-    height: 100vh;
-    padding: 5rem;
-    &__sub {
-      height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+    // &__sub {}
+
+    ul {
+      display: inline-block;
+      text-align: left;
+      list-style: disc;
     }
   }
 }

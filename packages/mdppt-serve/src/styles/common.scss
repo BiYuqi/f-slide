@@ -2,3 +2,35 @@
 pre[class*="language-"] {
   border-radius: 5px;
 }
+
+.center {
+  text-align: center;
+}
+
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+}
+
+.auto {
+  margin: 0 auto;
+}
+
+hr {
+  border: 0;
+  clear: both;
+  display: block;
+  height: 1px;
+  margin: 3.2rem auto;
+  width: 100%;
+  background: radial-gradient(ellipse at center,rgba(0,20,80,.2) 0,hsla(0,0%,100%,0) 75%);
+}
+
+h3+hr,
+h2+hr {
+  margin-top: 2rem;
+  margin-bottom: 3.6;
+}

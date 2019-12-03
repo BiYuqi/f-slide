@@ -1,11 +1,10 @@
 ---
 title: Mdppt - 网页版演示库
-author: 'BiYuqi'
 url: https://github.com/ftb/mdppt
 codeStyle: 'tomorrow'
 ---
-<slide class="dark puple" class="light" :class="center" image="test__url">
-# M D P P T
+<slide class="" :class="w40 auto" image="test__url">
+## M D P P T {.f50 .center}
 
 ```js
 npm install mdppt -g
@@ -16,17 +15,16 @@ mdppt build mdppt.md
 ```
 </slide>
 
-<slide>
-# 第二页
-
-- 2016
-- 2017
-- 2018
-- 2019
-- 2020...
+<slide class="yinbai" :class="w40 auto center">
+## 主要功能
+---
+- 支持背景颜色, 图片
+- 支持添加CSS类名
+- 支持快捷键
+- 灵活布局
 </slide>
 
-<slide>
+<slide class="yunfengbai">
 # 第三页
 
 ```js
