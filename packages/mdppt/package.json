@@ -2,9 +2,9 @@
   "name": "mdppt",
   "version": "0.0.0",
   "description": "",
-  "main": "./bin/mdppt.js",
+  "main": "./bin/cli.js",
   "bin": {
-    "mdppt": "./bin/mdppt.js"
+    "mdppt": "./bin/cli.js"
   },
   "scripts": {},
   "repository": {
