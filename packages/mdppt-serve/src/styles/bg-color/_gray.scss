@@ -1,74 +1,12 @@
-// 鲸鱼灰
-.jingyuhui {
-  background-color: #475164;
-}
+@import '../mixin';
+@import './color';
 
-// 锌灰
-.xinhui {
-  background-color: #7a7374;
-}
+.bg {
+  &-qianhui {
+    @include bg($qianhui)
+  }
 
-// 青灰
-.qinghui {
-  background-color: #2b333e;
-}
-
-// 瓦罐灰
-.waguanhui {
-  background-color: #47484c;
-}
-
-// 水牛灰
-.shuiniuhui {
-  background-color: #2f2f35;
-}
-
-// 战舰灰
-.zhanjianhui {
-  background-color: #495c69;
-}
-
-// 嫩灰
-.nenhui {
-  background-color: #74787a;
-}
-
-// 夏云灰
-.xiayunhui {
-  background-color: #617172;
-}
-
-// 垩灰
-.ehui {
-  background-color: #737c7b;
-}
-
-// 明灰
-.minghui {
-  background-color: #8a988e;
-}
-
-// 月灰
-.yuehui {
-  background-color: #b7ae8f;
-}
-
-// 铅灰
-.qianhui {
-  background-color: #bbb5ac;
-}
-
-// 浅灰
-.qianhui {
-  background-color: #dad4cb;
-}
-
-// 中灰
-.zhonghui {
-  background-color: #bbb5ac;
-}
-
-// 长石灰
-.changshihui {
-  background-color: #363433;
+  &-zhonghui {
+    @include bg($zhonghui)
+  }
 }

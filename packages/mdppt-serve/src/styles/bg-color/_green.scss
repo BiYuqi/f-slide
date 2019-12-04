@@ -1,19 +1,20 @@
-// 石绿
-.shilv {
-  background-color: #617172;
-}
+@import '../mixin';
+@import './color';
 
-// 美蝶绿
-.meidielv {
-  background-color: #12aa9c;
-}
+.bg {
+  &-shilv {
+    @include bg($shilv)
+  }
 
-// yadinglv
-.yadinglv {
-  background-color: #428675;
-}
+  &-meidielv {
+    @include bg($meidielv)
+  }
 
-// 橄榄绿
-.ganlanlv {
-  background-color: #5e5314;
+  &-yadinglv {
+    @include bg($yadinglv)
+  }
+
+  &-ganlanlv {
+    @include bg($ganlanlv)
+  }
 }

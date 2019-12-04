@@ -8,7 +8,12 @@ const parseYml = require('./lib/parseYml')
 const mdParser = require('./lib/markdown')
 const defaultConfig = require('./default')
 
-const md = markdownIt()
+const md = markdownIt({
+  html: true,
+  linkify: true,
+  typographer: true
+}).enable('image')
+
 md.use(prism)
   .use(markdownItAttrs)
 

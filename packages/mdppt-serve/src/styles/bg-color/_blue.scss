@@ -1,78 +1,44 @@
-// 鸽蓝
-.gelan {
-  background-color: #1c2938;
-}
+@import '../mixin';
+@import './color';
 
-// 钢青色
-.gangqing {
-  background-color: #142334;
-}
+.bg {
+  &-gelan {
+    @include bg($gelan)
+  }
 
-// 海涛蓝
-.haitaolan {
-  background-color: #15559a;
-}
+  &-gangqing {
+    @include bg($gangqing)
+  }
 
-// 海军蓝
-.haijunlan {
-  background-color: #346c9c;
-}
+  &-haitaolan {
+    @include bg($haitaolan)
+  }
 
-// 品蓝
-.pinlan {
-  background-color: #2b73af;
-}
+  &-haijunlan {
+    @include bg($haijunlan)
+  }
 
-// 碟翅蓝
-.diechilan {
-  background-color: #4e7ca1;
-}
+  &-pinlan {
+    @include bg($pinlan)
+  }
 
-// 花青蓝
-.huaqing {
-  background-color: #2376b7;
-}
+  &-yanlan {
+    @include bg($yanlan)
+  }
 
-// 鷃蓝
-.yanlan {
-  background-color: #144a74;
-}
-// 青山蓝
-.qingshanlan {
-  background-color: #8fb2c9;
-}
+  &-caolan {
+    @include bg($chaolan)
+  }
 
-//潮蓝
-.chaolan {
-  background-color: #2983bb;
-}
+  &-canglan {
+    @include bg($canglan)
+  }
 
-// 天蓝
-.tianlan {
-  background-color: #1677b3;
-}
+  &-huilan {
+    @include bg($huilan)
+  }
 
-// 宝石蓝
-.baoshilan {
-  background-color: #2486b9;
-}
-
-// 釉蓝
-.youlan {
-  background-color: #1781b5;
-}
-
-// 苍蓝
-.canglan {
-  background-color: #134857;
-}
-
-// 深灰蓝
-.shenhuilan {
-  background-color: #132c33;
-}
-
-// 灰蓝
-.huilan {
-  background-color: #21373d;
+  &-shenhuilan {
+    @include bg($shenhuilan)
+  }
 }

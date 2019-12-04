@@ -7,10 +7,12 @@
 body, html {
   width: 100%;
   height: 100%;
+  font-family: -apple-system,Noto Sans,SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace,Helvetica Neue,Helvetica,Nimbus Sans L,Arial,Liberation Sans,PingFang SC,Hiragino Sans GB,Noto Sans CJK SC,Source Han Sans SC,Source Han Sans CN,Microsoft YaHei,Wenquanyi Micro Hei,WenQuanYi Zen Hei,ST Heiti,SimHei,WenQuanYi Zen Hei Sharp,sans-serif;
+  font-size: 62.5%;
 }
 
 body {
-  font-size: 14px;
   color: #333;
   background-color: #f7f9fb;
+  font-size: 1.8rem;
 }

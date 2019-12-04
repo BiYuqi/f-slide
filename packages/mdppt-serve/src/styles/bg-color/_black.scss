@@ -1,0 +1,12 @@
+@import '../mixin';
+@import './color';
+
+.bg {
+  &-dark {
+    @include bg($bgDark)
+  }
+
+  &-dark-gray {
+    @include bg($bgDarkGray)
+  }
+}

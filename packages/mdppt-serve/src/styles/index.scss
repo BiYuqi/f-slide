@@ -18,7 +18,12 @@
     flex-direction: column;
     justify-content: center;
     min-height: 100vh;
-    // &__sub {}
+    position: relative;
+    word-wrap: break-word;
+    &__sub {
+      position: relative;
+      z-index: 2;
+    }
 
     ul {
       display: inline-block;
