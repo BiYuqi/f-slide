@@ -14,8 +14,7 @@ const md = markdownIt({
   typographer: true
 }).enable('image')
 
-md.use(prism)
-  .use(markdownItAttrs)
+md.use(prism).use(markdownItAttrs)
 
 const template = fs.readFileSync(path.resolve(__dirname, './template/index.hbs')).toString()
 
