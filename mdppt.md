@@ -4,10 +4,10 @@ url: https://github.com/ftb/mdppt
 codeStyle: 'toy'
 ---
 
-<slide class="bg-pinlan" :class="w60 auto alignCenter" image="http://h1.ioliu.cn/bing/Nebelmond_ZH-CN1304523635_1920x1080.jpg">
+<slide class="bg-apple" :class="w60 auto alignCenter" image="http://h1.ioliu.cn//bing/BubbleNebula_ZH-CN2787112807_1920x1080.jpg">
 
-## M D P P T
-A framework for easily creating beautiful presentations using Markdown {.sub-text}
+# M D P P T
+一个使用Markdown轻松创建漂亮的演示文稿的框架 {.sub-text}
 </slide>
 
 <slide :class="w40 auto alignCenter">

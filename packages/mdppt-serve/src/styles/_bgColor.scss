@@ -3,12 +3,12 @@
 @import './bg-color/gray';
 @import './bg-color/blue';
 @import './bg-color/green';
-@import './bg-color//black';
+@import './bg-color/black';
 
-.dark {
-  @include bg(#000)
-}
+$apple: linear-gradient(to bottom, #000 0%, #1a2028 50%, #293845 100%);
 
-.light {
-  @include bg(#fff)
+.bg {
+  &-apple {
+    background: $apple
+  }
 }

@@ -2,15 +2,15 @@
 @import './common.scss';
 @import './width';
 @import './bgColor';
-@import './textColor';
 @import './size';
-@import './layout';
 
 .mdppt {
   height: 100vh;
 
   .mdppt-content {
     height: 100vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
   }
 
   .mdppt-slide {
