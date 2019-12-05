@@ -1,5 +1,5 @@
 ---
-title: Mdppt - 简单易用的Markdown语法-网页演示库
+title: Mdppt - 一个使用Markdown轻松创建漂亮的演示文稿的框架
 url: https://github.com/ftb/mdppt
 codeStyle: 'toy'
 ---
@@ -7,11 +7,11 @@ codeStyle: 'toy'
 <slide class="bg-pinlan" :class="w60 auto alignCenter" image="http://h1.ioliu.cn/bing/Nebelmond_ZH-CN1304523635_1920x1080.jpg">
 
 ## M D P P T
-简单易用的Markdown语法-网页演示库 {.sub-text}
+A framework for easily creating beautiful presentations using Markdown {.sub-text}
 </slide>
 
 <slide :class="w40 auto alignCenter">
-## How to use it?
+## Hot to use MDPPT?
 
 ---
 ```js
@@ -23,22 +23,24 @@ mdppt build mdppt.md
 ```
 </slide>
 
-<slide class="bg-yeputaozi" :class="w40 auto alignCenter" image="http://h1.ioliu.cn//bing/SanSebastianFilm_ZH-CN5506786379_1920x1080.jpg">
-## 主要功能
+<slide :class="w40 auto alignCenter" image="http://h1.ioliu.cn//bing/SanSebastianFilm_ZH-CN5506786379_1920x1080.jpg">
+## Main Features
 
 ---
-- 支持背景颜色, 图片 
-- 支持添加CSS类名
-- 支持快捷键
-- 灵活布局
+- Support set background with 
+- Support add class
+- Support keyboard
+- Support flex
 </slide>
 
 <slide :class="w60 auto alignCenter">
-## 自定义配置工程
+## Custom Configuration
 
 ---
 
 - Create a `mdppt.config.js` in the root.
+- Mdppt will auto load the file and combine them replace the default configuration.
+
 ```js
 module.exports = {
   appName: 'main',
