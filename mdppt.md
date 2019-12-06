@@ -4,7 +4,7 @@ url: https://github.com/ftb/mdppt
 codeStyle: 'toy'
 ---
 
-<slide class="bg-apple" :class="w60 auto alignCenter" image="http://h1.ioliu.cn//bing/BubbleNebula_ZH-CN2787112807_1920x1080.jpg">
+<slide class="bg-apple" :class="w60 auto alignCenter" image="https://mdppt-1254319003.cos.ap-chengdu.myqcloud.com/valige2.jpg">
 
 # M D P P T
 一个使用Markdown轻松创建漂亮的演示文稿的框架 {.sub-text}
@@ -23,7 +23,7 @@ mdppt build mdppt.md
 ```
 </slide>
 
-<slide :class="w40 auto alignCenter" image="http://h1.ioliu.cn//bing/SanSebastianFilm_ZH-CN5506786379_1920x1080.jpg">
+<slide class="bg-apple" :class="w40 auto alignCenter">
 ## Main Features
 
 ---
