@@ -1,6 +1,6 @@
-const renderClass = require('./renderClass')
-const structuredSource = require('./structuredSource')
-const parseImage = require('./parseImage')
+const renderClass = require('./slide-parser/renderClass')
+const structuredSource = require('./slide-parser/structuredSource')
+const parseImage = require('./slide-parser/parseImage')
 
 module.exports = (md, context) => {
   const htmlResult = []

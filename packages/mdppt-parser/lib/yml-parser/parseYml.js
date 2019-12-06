@@ -1,6 +1,6 @@
 const jsYaml = require('js-yaml')
 const codeStyleValidate = require('./codeStyleValidate')
-const defaultConfig = require('../default')
+const defaultConfig = require('../../default')
 
 module.exports = content => {
   const parseRule = /---([\s\S]+?)---/
