@@ -29,6 +29,14 @@
       display: inline-block;
       text-align: left;
       list-style: disc;
+
+      li {
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    ol li, ul li {
+      margin-left: 3.2rem;
     }
   }
 }

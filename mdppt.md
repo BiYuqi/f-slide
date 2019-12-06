@@ -23,7 +23,7 @@ mdppt build mdppt.md
 ```
 </slide>
 
-<slide class="bg-apple" :class="w40 auto alignCenter">
+<slide class="bg-royal" :class="w40 auto alignCenter">
 ## Main Features
 
 ---
@@ -33,7 +33,7 @@ mdppt build mdppt.md
 - Support flex
 </slide>
 
-<slide :class="w60 auto alignCenter">
+<slide :class="w90 auto alignCenter">
 ## Custom Configuration
 
 ---

@@ -5,6 +5,7 @@ pre[class*="language-"] {
   border-radius: 5px;
 }
 
+// text-align
 .alignCenter {
   text-align: center;
 }
@@ -63,4 +64,7 @@ h2+hr {
 
 li, p, table, textarea {
   margin-bottom: 3rem;
+  line-height: 3rem;
 }
+
+// ul
