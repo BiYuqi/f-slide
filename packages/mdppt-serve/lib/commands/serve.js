@@ -46,6 +46,8 @@ module.exports = async api => {
   const devServer = new WebpackDevServer(compiler, options)
 
   devServer.listen(options.port, 'localhost', () => {
-    console.log(`${chalk.cyanBright('Mdppt server is starting at:')} ${chalk.green(`http://localhost:${options.port}`)}`)
+    console.log(
+      `${chalk.cyanBright('Mdppt server is starting at:')} ${chalk.green(`http://localhost:${options.port}`)}`
+    )
   })
 }
