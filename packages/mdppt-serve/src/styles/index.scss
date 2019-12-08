@@ -6,20 +6,23 @@
 
 .mdppt {
   height: 100vh;
-
-  .mdppt-content {
+  position: relative;
+  &-content {
     height: 100vh;
     overflow-x: hidden;
     overflow-y: scroll;
   }
 
-  .mdppt-slide {
+  &-slide {
     display: flex;
     flex-direction: column;
     justify-content: center;
     min-height: 100vh;
     position: relative;
     word-wrap: break-word;
+    display: none;
+    opacity: 0;
+    transition: all .3s ease-in-out;
     &__sub {
       position: relative;
       z-index: 2;
@@ -37,6 +40,58 @@
 
     ol li, ul li {
       margin-left: 3.2rem;
+    }
+  }
+
+  &-action {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    margin: 0 auto;
+    z-index: 8;
+
+    button {
+      outline: none;
+      border: none;
+      cursor: pointer;
+      opacity: 0;
+      transition: all .3s ease-out;
+      height: 4rem;
+      padding: .8rem;
+      font-size: 16px;
+      border-radius: .4rem;
+      background-color: initial;
+      color: #abc;
+    }
+
+    span {
+      color: #abc;
+      margin: 0 10px;
+      opacity: 0;
+      transition: all .3s;
+    }
+
+    .mdppt-action__prev,
+    .mdppt-action__next {
+      &:hover {
+        background-color: #313A51;
+        opacity: 1;
+        color: #fff;
+      }
+    }
+    &:hover {
+      span {
+        opacity: .8;
+      }
+
+      button {
+        opacity: .8;
+      }
     }
   }
 }

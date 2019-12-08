@@ -33,7 +33,7 @@ mdppt build mdppt.md
 - Support flex
 </slide>
 
-<slide :class="w90 auto alignCenter">
+<slide :class="w60 auto alignCenter">
 ## Custom Configuration
 
 ---

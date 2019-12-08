@@ -29,6 +29,11 @@ module.exports = (md, context) => {
       <div class="mdppt-content">
         ${htmlResult.join('\n')}
       </div>
+      <div class="mdppt-action">
+        <button class="mdppt-action__prev">Prev</button>
+        <span class="mdppt-action__count"></span>
+        <button class="mdppt-action__next">Next</button>
+      </div>
     </div>
   `
   return {
