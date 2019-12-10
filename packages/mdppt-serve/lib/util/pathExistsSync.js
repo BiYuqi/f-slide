@@ -3,7 +3,7 @@ const path = require('path')
 
 module.exports = (context, files) => {
   if (files & (typeof files === 'string')) {
-    if (fs.pathExistsSync(path.join(context, file))) {
+    if (fs.pathExistsSync(path.join(context, files))) {
       return files
     }
   } else {
