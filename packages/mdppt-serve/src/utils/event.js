@@ -1,36 +1,34 @@
 class Event {
-  constructor() {
-    
-  }
+  constructor() {}
 
-  on (dom, type, cb) {
+  on(dom, type, cb) {
     dom.addEventListener(type, cb, false)
   }
 
-  select (selector) {
+  select(selector) {
     return document.querySelector(selector)
   }
 
-  selectAll (selector) {
+  selectAll(selector) {
     return Array.from(document.querySelectorAll(selector))
   }
 
-  length (dom) {
+  length(dom) {
     if (!dom) return null
     return this.selectAll(dom).length
   }
 
-  getDirection (event) {
+  getDirection(event) {
     return new Promise((resolve, reject) => {
       const e = event || window.event
-      if (e && (e.keyCode == 40 || e.keyCode == 39)) { 
+      if (e && (e.keyCode == 40 || e.keyCode == 39)) {
         resolve({
           direct: 'next',
           isScope: true
         })
         return
       }
-      if (e && e.keyCode == 37 || e.keyCode == 38) { 
+      if ((e && e.keyCode == 37) || e.keyCode == 38) {
         resolve({
           direct: 'prev',
           isScope: true
@@ -44,9 +42,7 @@ class Event {
     })
   }
 
-  go (dom, index) {
-
-  }
+  go(dom, index) {}
 }
 
 export default new Event()

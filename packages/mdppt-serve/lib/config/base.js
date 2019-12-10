@@ -1,11 +1,9 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const resolveLocal = require('../util/resolveLocal')
-const resolveCwd = require('../util/resolveCwd')
 
 module.exports = api => ({
   entry: {
-    [api.config.appName]: resolveLocal('../../src/index.js')
+    [api.config.appName]: api.resolveLocal('../../src/index.js')
   },
   module: {
     rules: [
@@ -15,7 +13,7 @@ module.exports = api => ({
         use: {
           loader: 'babel-loader',
           options: {
-            presets: [resolveLocal('../../node_modules/@babel/preset-env')]
+            presets: [api.resolveLocal('../../node_modules/@babel/preset-env')]
           }
         }
       },
@@ -49,7 +47,7 @@ module.exports = api => ({
         loader: 'url-loader',
         options: {
           limit: 10000,
-          name: resolveCwd(api.context, 'image/[name].[hash:7].[ext]')
+          name: api.resolveCwd(api.context, 'image/[name].[hash:7].[ext]')
         }
       },
       {
@@ -57,7 +55,7 @@ module.exports = api => ({
         loader: 'url-loader',
         options: {
           limit: 10000,
-          name: resolveCwd(api.context, 'media/[name].[hash:7].[ext]')
+          name: api.resolveCwd(api.context, 'media/[name].[hash:7].[ext]')
         }
       },
       {
@@ -65,24 +63,24 @@ module.exports = api => ({
         loader: 'url-loader',
         options: {
           limit: 10000,
-          name: resolveCwd(api.context, 'fonts/[name].[hash:7].[ext]')
+          name: api.resolveCwd(api.context, 'fonts/[name].[hash:7].[ext]')
         }
       }
     ]
   },
   resolve: {
     extensions: ['.js', '.jsx', '.json', '.md'],
-    modules: ['node_modules', resolveLocal('../../node_modules')],
+    modules: ['node_modules', api.resolveLocal('../../node_modules')],
     symlinks: false
   },
   resolveLoader: {
-    modules: ['node_modules', resolveLocal('../../node_modules')]
+    modules: ['node_modules', api.resolveLocal('../../node_modules')]
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: api.getEntry(),
-      filename: resolveCwd(api.context, `/${api.config.outputDir}/index.html`),
-      favicon: resolveLocal('../../public/favicon.ico'),
+      filename: api.resolveCwd(api.context, `/${api.config.outputDir}/index.html`),
+      favicon: api.resolveLocal('../../public/favicon.ico'),
       inject: true,
       templateParameters: (compilation, assets, pluginOptions) => {
         let stats

@@ -1,19 +1,17 @@
 const chalk = require('chalk')
-const path = require('path')
-const fs = require('fs-extra')
-const pathExistsSync = require('./pathExistsSync')
+const { findExistSync, findExisting, cwd } = require('mdppt-utils')
 
 const resolveEntry = (entry, cmd) => {
-  const context = process.cwd()
-  entry = entry || pathExistsSync(context, ['index.md', 'default.md', 'README.md', 'readme.md'])
+  const context = cwd()
+  entry = entry || findExisting(context, ['index.md', 'default.md', 'README.md', 'readme.md'])
 
   if (!entry) {
     console.log(chalk.red(`Faild to found the entry file in ${chalk.yellow(context)}`))
     process.exit(1)
   }
 
-  if (!fs.pathExistsSync(path.resolve(context, entry))) {
-    console.log(chalk.red(`The file you provided is not a validate markdown file.`))
+  if (!findExistSync(context, entry)) {
+    console.log(chalk.red(`Faild to parse the markdown file.`))
     process.exit(1)
   }
 

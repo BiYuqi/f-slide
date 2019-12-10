@@ -4,14 +4,13 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const baseWebpackConfig = require('./base')
-const resolveCwd = require('../util/resolveCwd')
 
 module.exports = api =>
   webpackMerge(baseWebpackConfig(api), {
     mode: 'production',
     output: {
       publicPath: api.config.baseUrl,
-      path: resolveCwd(api.context, api.config.outputDir),
+      path: api.resolveCwd(api.context, api.config.outputDir),
       filename: 'js/[name].[contenthash:8].js',
       chunkFilename: 'js/[name].[id].[chunkhash].js'
     },

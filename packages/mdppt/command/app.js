@@ -11,7 +11,7 @@ const app = async api => {
         {
           type: 'name',
           name: 'name',
-          message: 'what\'s the name?',
+          message: "what's the name?",
           choices: ['Yes', 'No']
         }
       ])

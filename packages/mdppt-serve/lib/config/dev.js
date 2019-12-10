@@ -1,7 +1,6 @@
 const merge = require('webpack-merge')
 const webpack = require('webpack')
 const baseWebpackConfig = require('./base')
-const resolveCwd = require('../util/resolveCwd')
 
 module.exports = api =>
   merge(baseWebpackConfig(api), {
@@ -9,7 +8,7 @@ module.exports = api =>
     devtool: 'inline-source-map',
     output: {
       publicPath: api.config.baseUrl,
-      path: resolveCwd(api.context, api.config.outputDir),
+      path: api.resolveCwd(api.context, api.config.outputDir),
       filename: '[name].js'
     },
     plugins: [new webpack.HotModuleReplacementPlugin()]

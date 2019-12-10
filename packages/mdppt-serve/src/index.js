@@ -15,14 +15,14 @@ class Mdppt {
     this.init()
   }
 
-  init () {
-    Event.on(window, 'hashchange', (event) => {
+  init() {
+    Event.on(window, 'hashchange', event => {
       this.initSlideIndex()
       this.resetAll()
       this.goToPage(this.slideIndex)
     })
 
-    Event.on(document, 'keydown', async (event) => {
+    Event.on(document, 'keydown', async event => {
       const { direct, isScope } = await Event.getDirection(event)
       if (isScope) {
         if (direct === 'next') {
@@ -50,12 +50,12 @@ class Mdppt {
     this.goToPage(this.slideIndex)
   }
 
-  setSlideIndex (index) {
+  setSlideIndex(index) {
     this.slideIndex = ~~index
     window.location.href = `/#slide=${index}`
   }
 
-  initSlideIndex () {
+  initSlideIndex() {
     const slideRe = /slide=(\d+)+/
     const match = window.location.href.match(slideRe)
     if (!match) {
@@ -74,14 +74,14 @@ class Mdppt {
     this.setSlideIndex(match[1])
   }
 
-  resetAll () {
+  resetAll() {
     for (let i = 0; i < this.slideLength; i++) {
       this.slidePage[i].style.display = 'none'
       this.slidePage[i].style.opacity = '0'
     }
   }
 
-  goToPage (slideIndex) {
+  goToPage(slideIndex) {
     this.slidePage[slideIndex - 1].style.display = 'flex'
     setTimeout(() => {
       this.slidePage[slideIndex - 1].style.opacity = '1'
@@ -89,7 +89,7 @@ class Mdppt {
     this.setPageNumber()
   }
 
-  goNext () {
+  goNext() {
     if (this.slideIndex >= this.slideLength) {
       return
     }
@@ -98,7 +98,7 @@ class Mdppt {
     this.setPageNumber()
   }
 
-  goPrev () {
+  goPrev() {
     if (this.slideIndex <= 1) {
       return
     }
@@ -107,7 +107,7 @@ class Mdppt {
     this.setPageNumber()
   }
 
-  setPageNumber () {
+  setPageNumber() {
     this.slideCount.innerHTML = `${this.slideIndex}/${this.slideLength}`
   }
 }

@@ -3,11 +3,10 @@ const chalk = require('chalk')
 const WebpackDevServer = require('webpack-dev-server')
 const portfinder = require('portfinder')
 const devConfig = require('../config/dev')
-const resolveCwd = require('../util/resolveCwd')
 
 module.exports = async api => {
   const options = {
-    contentBase: [resolveCwd(api.context, 'dist'), resolveCwd(api.context, api.getEntry())],
+    contentBase: [api.resolveCwd(api.context, 'dist'), api.resolveCwd(api.context, api.getEntry())],
     open: true,
     publicPath: api.config.baseUrl,
     compress: true,
