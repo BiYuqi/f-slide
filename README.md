@@ -1,8 +1,9 @@
-# Welcome to MDPPT(Still in coding, not release yet!) 👋
+# Welcome to MDPPT 👋
 ![0.0.0.](https://img.shields.io/badge/version-0.0.0-blue.svg?cacheSeconds=2592000)
 [![Documentation](https://img.shields.io/badge/documentation-yes-brightgreen.svg)]( )
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/ftbjs/mdppt/blob/master/LICENSE)
 
+**(Still in coding, not release yet!)**
 > A framework for easily creating beautiful presentations using Markdown.
 
 ## [Homepage](https://github.com/ftbjs/mdppt)
