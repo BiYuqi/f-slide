@@ -1,5 +1,5 @@
 # Welcome to MDPPT 👋
-![0.0.0.](https://img.shields.io/badge/version-0.0.0-blue.svg?cacheSeconds=2592000)
+![0.0.0](https://img.shields.io/badge/version-0.0.0-blue.svg?cacheSeconds=2592000)
 [![Documentation](https://img.shields.io/badge/documentation-yes-brightgreen.svg)]( )
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/ftbjs/mdppt/blob/master/LICENSE)
 
@@ -28,14 +28,17 @@ git clone https://github.com/ftbjs/mdppt.git
 
 cd mdppt
 
-npm install && npm run install:dev
+npm install
+
+# install packages/ dependencies
+npm run start
 
 cd packages/mdppt
 
 npm link
 
 # execute all above steps
-# you can run below command in any command line
+# you can run below command in global
 
 mdppt serve <filename>
 # or

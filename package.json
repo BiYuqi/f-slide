@@ -3,8 +3,7 @@
   "private": true,
   "root": true,
   "scripts": {
-    "install:dev": "lerna bootstrap",
-    "fix": "eslint --fix 'packages/**/*.js'",
+    "start": "lerna bootstrap",
     "prettier": "prettier --write 'packages/**/*.js'"
   },
   "prettier": {
@@ -25,7 +24,6 @@
     ]
   },
   "devDependencies": {
-    "babel-eslint": "^10.0.3",
     "lerna": "^3.15.0",
     "husky": "^3.1.0",
     "lint-staged": "^9.5.0",
