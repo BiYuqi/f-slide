@@ -1,9 +1,14 @@
 const webpack = require('webpack')
 const chalk = require('chalk')
 const prodConfig = require('../config/build')
+const deleteBuildDir = require('../util/deleteBuildDir')
 
 module.exports = api => {
   api.config.mode = 'production'
+
+  // Delete the old build dir before a new build start.
+  deleteBuildDir(api)
+
   webpack(prodConfig(api), function(err, stats) {
     if (err) {
       throw err
