@@ -1,7 +1,7 @@
 const webpack = require('webpack')
-const chalk = require('chalk')
 const WebpackDevServer = require('webpack-dev-server')
 const portfinder = require('portfinder')
+const { logger } = require('mdppt-utils')
 const devConfig = require('../config/dev')
 
 module.exports = async api => {
@@ -27,7 +27,7 @@ module.exports = async api => {
   if (autoPort) {
     options.port = autoPort
   } else {
-    console.log(chalk.red('Can not find a useable port, please check your local port.'))
+    logger.red('Can not find an avaiable port, please check your local port.')
   }
 
   // set hot load json
@@ -45,8 +45,6 @@ module.exports = async api => {
   const devServer = new WebpackDevServer(compiler, options)
 
   devServer.listen(options.port, 'localhost', () => {
-    console.log(
-      `${chalk.cyanBright('Mdppt server is starting at:')} ${chalk.green(`http://localhost:${options.port}`)}`
-    )
+    logger.cyanBright(`Mdppt server is starting at:`, logger.green.raw(`http://localhost:${options.port}`))
   })
 }
