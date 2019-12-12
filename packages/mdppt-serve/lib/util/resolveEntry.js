@@ -1,4 +1,4 @@
-const { findExistSync, findExisting, cwd, logger } = require('mdppt-utils')
+const { findExistSync, findExisting, cwd, logger } = require('@mdppt/utils')
 
 const resolveEntry = (entry, cmd) => {
   const context = cwd()

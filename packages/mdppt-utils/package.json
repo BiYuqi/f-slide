@@ -1,5 +1,5 @@
 {
-  "name": "mdppt-utils",
+  "name": "@mdppt/utils",
   "version": "0.0.0",
   "description": "A tool for mdppt.",
   "main": "index.js",
@@ -10,7 +10,9 @@
   "license": "MIT",
   "dependencies": {
     "chalk": "^3.0.0",
-    "fs-extra": "^8.1.0",
-    "lodash": "^4.17.15"
+    "fs-extra": "^8.1.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

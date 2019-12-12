@@ -1,7 +1,7 @@
 const webpack = require('webpack')
 const WebpackDevServer = require('webpack-dev-server')
 const portfinder = require('portfinder')
-const { logger } = require('mdppt-utils')
+const { logger } = require('@mdppt/utils')
 const devConfig = require('../config/dev')
 
 module.exports = async api => {

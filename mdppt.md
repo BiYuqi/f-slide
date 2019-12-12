@@ -15,7 +15,7 @@ codeStyle: 'toy'
 
 ---
 ```js
-npm install mdppt -g
+npm install @mdppt/cli -g
 
 mdppt serve mdppt.md
 
@@ -38,7 +38,7 @@ mdppt build mdppt.md
 
 ---
 
-- Create a `mdppt.config.js` in the root.
+- Create a **mdppt.config.js** in the root.
 - Mdppt will auto load the file and combine them replace the default configuration.
 
 ```js

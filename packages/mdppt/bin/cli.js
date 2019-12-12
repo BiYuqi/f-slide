@@ -1,7 +1,7 @@
 #! /usr/bin/env node
 
 const program = require('commander')
-const { logger } = require('mdppt-utils')
+const { logger } = require('@mdppt/utils')
 
 program.version(require('../package').version, '-v, --version').usage(`${logger.green.raw('<command>')} [Options]`)
 
@@ -16,14 +16,14 @@ program
   .command('serve [entry]')
   .description(logger.magenta.raw('Setup a local server.'))
   .action((entry, cmd) => {
-    require('mdppt-serve').serve(entry, cmd)
+    require('@mdppt/serve').serve(entry, cmd)
   })
 
 program
   .command('build [entry]')
   .description(logger.magenta.raw('Build the markdown file to slide.'))
   .action((entry, cmd) => {
-    require('mdppt-serve').build(entry, cmd)
+    require('@mdppt/serve').build(entry, cmd)
   })
 
 program

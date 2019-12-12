@@ -1,5 +1,5 @@
 const rimraf = require('rimraf')
-const { findExistSync, logger } = require('mdppt-utils')
+const { findExistSync, logger } = require('@mdppt/utils')
 
 module.exports = api => {
   if (findExistSync(api.context, api.config.outputDir)) {

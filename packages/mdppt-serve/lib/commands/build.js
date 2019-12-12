@@ -1,5 +1,5 @@
 const webpack = require('webpack')
-const { logger } = require('mdppt-utils')
+const { logger } = require('@mdppt/utils')
 const prodConfig = require('../config/build')
 const deleteBuildDir = require('../util/deleteBuildDir')
 

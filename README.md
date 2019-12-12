@@ -12,7 +12,7 @@
 ## Install
 
 ```sh
-npm i mdppt -g
+npm i @mdppt/cli -g
 ```
 
 ## Usage

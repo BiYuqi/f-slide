@@ -1,5 +1,5 @@
 {
-  "name": "mdppt",
+  "name": "@mdppt/cli",
   "version": "0.0.0",
   "description": "",
   "main": "./bin/cli.js",
@@ -18,13 +18,16 @@
   },
   "homepage": "https://github.com/ftb/mdppt#readme",
   "dependencies": {
+    "@mdppt/serve": "^0.0.0",
+		"@mdppt/utils": "^0.0.0",
     "commander": "^4.0.1",
     "fs-extra": "^8.1.0",
     "handlebars": "^4.5.3",
     "inquirer": "^7.0.0",
-    "mdppt-serve": "^0.0.0",
-    "mdppt-utils": "^0.0.0",
     "ora": "^4.0.3",
     "shelljs": "^0.8.3"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

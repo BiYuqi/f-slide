@@ -1,5 +1,5 @@
 {
-  "name": "mdppt-parser",
+  "name": "@mdppt/parser",
   "version": "0.0.0",
   "description": "Parse the markdown to html as a wabpack loader.",
   "main": "index.js",
@@ -16,5 +16,8 @@
     "markdown-it-attrs": "^3.0.1",
     "markdown-it-container": "^2.0.0",
     "markdown-it-prism": "^2.0.3"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
