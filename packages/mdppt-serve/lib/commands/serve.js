@@ -2,6 +2,7 @@ const webpack = require('webpack')
 const WebpackDevServer = require('webpack-dev-server')
 const portfinder = require('portfinder')
 const { logger } = require('@mdppt/utils')
+const defaultsdeep = require('lodash.defaultsdeep')
 const devConfig = require('../config/dev')
 
 module.exports = async api => {
@@ -14,12 +15,14 @@ module.exports = async api => {
     hot: true,
     disableHostCheck: true,
     watchContentBase: true,
-    inline: true,
-    port: 8080
+    inline: true
   }
 
   // set data to global api
   api.config.mode = 'development'
+
+  // combine config
+  api.config = defaultsdeep({ devServer: options }, api.config)
 
   // auto find avaiable port
   portfinder.basePort = options.port
