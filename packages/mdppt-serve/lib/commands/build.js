@@ -1,5 +1,5 @@
 const webpack = require('webpack')
-const { logger } = require('@mdppt/utils')
+const { logger, signature } = require('@mdppt/utils')
 const prodConfig = require('../config/build')
 const deleteBuildDir = require('../util/deleteBuildDir')
 
@@ -9,7 +9,7 @@ module.exports = api => {
   // Delete the old build dir before a new build start.
   deleteBuildDir(api)
 
-  webpack(prodConfig(api), (err, stats) => {
+  webpack(prodConfig(api), async (err, stats) => {
     if (err) {
       throw err
     }
@@ -26,6 +26,12 @@ module.exports = api => {
         chunks: false,
         chunkModules: false
       }) + '\n\n'
+    )
+
+    logger.cyan(
+      await signature({
+        text: 'BUILD SUCCESS'
+      })
     )
   })
 }
