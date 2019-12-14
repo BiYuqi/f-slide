@@ -30,7 +30,7 @@ module.exports = api => {
 
     logger.cyan(
       await signature({
-        text: 'BUILD SUCCESS'
+        text: 'BUILD  SUCCESS'
       })
     )
   })

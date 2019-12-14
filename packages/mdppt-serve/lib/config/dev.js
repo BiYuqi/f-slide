@@ -7,7 +7,7 @@ module.exports = api =>
     mode: 'development',
     devtool: 'inline-source-map',
     output: {
-      publicPath: api.config.baseUrl,
+      publicPath: '/',
       path: api.resolveCwd(api.context, api.config.outputDir),
       filename: '[name].js'
     },

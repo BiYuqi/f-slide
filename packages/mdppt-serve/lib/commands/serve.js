@@ -9,13 +9,12 @@ module.exports = async api => {
   // output sinature
   logger.cyan(
     await signature({
-      text: 'MDPPT-CLI'
+      text: 'MDPPT CLI'
     })
   )
 
   const options = {
     contentBase: [api.resolveCwd(api.context, 'dist'), api.resolveCwd(api.context, api.getEntry())],
-    publicPath: api.config.baseUrl,
     compress: true,
     noInfo: true,
     hot: true,
@@ -31,17 +30,18 @@ module.exports = async api => {
   api.config = defaultsdeep({ devServer: options }, api.config)
 
   // auto find avaiable port
-  portfinder.basePort = options.port
+  portfinder.basePort = api.config.devServer.port
   const autoPort = await portfinder.getPortPromise()
   if (autoPort) {
-    options.port = autoPort
+    api.config.devServer.port = autoPort
   } else {
     logger.red('Can not find an avaiable port, please check your local port.')
   }
 
   // set hot load json
-  const defaultDevConfig = devConfig(api)
-  const rawHotUrl = `webpack-dev-server/client?http://127.0.0.1:${options.port}/`
+  const defaultDevConfig = defaultsdeep({ devServer: api.config.devServer }, devConfig(api))
+  const { port } = defaultDevConfig.devServer
+  const rawHotUrl = `webpack-dev-server/client?http://127.0.0.1:${port}/`
   const entry = defaultDevConfig.entry[api.appName]
 
   if (typeof entry === 'string') {
@@ -53,7 +53,7 @@ module.exports = async api => {
   const compiler = webpack(defaultDevConfig)
   const devServer = new WebpackDevServer(compiler, options)
 
-  devServer.listen(options.port, 'localhost', () => {
-    logger.cyanBright(`Mdppt service starts on:`, logger.blueBright.raw(`http://localhost:${options.port}`))
+  devServer.listen(port, 'localhost', () => {
+    logger.cyanBright(`Mdppt service starts on:`, logger.blueBright.raw(`http://localhost:${port}`))
   })
 }
