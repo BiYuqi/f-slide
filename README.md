@@ -18,6 +18,8 @@ npm i @mdppt/cli -g
 ## Usage
 
 ```sh
+ mdppt new <filename>
+
  mdppt serve <filename>
 
  mdppt build <filename>

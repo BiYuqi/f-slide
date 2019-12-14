@@ -6,10 +6,10 @@ const { logger } = require('@mdppt/utils')
 program.version(require('../package').version, '-v, --version').usage(`${logger.green.raw('<command>')} [Options]`)
 
 program
-  .command(logger.green.raw('new [filename]'))
+  .command('new [filename]')
   .description(logger.magenta.raw('Create a template file using mdppt command.'))
   .action((name, other) => {
-    require('../command/app.js.js')({ fileName: name })
+    require('../command/app.js')(name)
   })
 
 program
@@ -30,7 +30,7 @@ program
   .command('*')
   .description(logger.yellow.raw('Type a wrong command. Please try `mdppt -h`.'))
   .action((name, other) => {
-    logger.greenBright('Please try `mdppt -h`, Get the whold feature list.')
+    logger.greenBright('Please try `mdppt -h`, Get the whole feature list.')
   })
 
 program.parse(process.argv)
