@@ -22,7 +22,14 @@ module.exports = class Service {
     this.resolveEntry = resolveEntry
     this.resolveLocal = resolveLocal
     this.resolveCwd = resolveCwd
+    // store the webpack config into the config field
     this.config = combineConfig(this)
+
+    // set the command line current version
+    this.currentVersion = options.parent._version
+
+    // command line info when user start serve or build
+    this.args = options
   }
 
   getEntry() {
