@@ -8,7 +8,7 @@ function getRemoteVersion() {
     axios
       .get(REPO_RAW_URL, { timeout: 10000 })
       .then(response => {
-        resolve(response)
+        resolve(response.data.version)
       })
       .catch(e => resolve(false))
   })
@@ -18,8 +18,9 @@ const checkVersion = async api => {
   const { currentVersion } = api
   const remoteVersion = await getRemoteVersion()
   if (!remoteVersion) {
-    logger.yellow('Faild to check remove version.')
-    return
+    // hide the check update message when api fail
+    // logger.yellow('Faild to check remove version.')
+    return false
   }
 
   if (currentVersion !== remoteVersion) {
