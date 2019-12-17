@@ -1,7 +1,7 @@
 const webpack = require('webpack')
 const WebpackDevServer = require('webpack-dev-server')
 const portfinder = require('portfinder')
-const { logger, signature, checkVersion } = require('@mdppt/utils')
+const { logger, signature, checkVersion, serveMsg } = require('@mdppt/utils')
 const defaultsdeep = require('lodash.defaultsdeep')
 const devConfig = require('../config/dev')
 
@@ -54,8 +54,7 @@ module.exports = async api => {
   const devServer = new WebpackDevServer(compiler, options)
 
   devServer.listen(port, 'localhost', () => {
-    logger.cyanBright(`Mdppt service starts on:`, logger.blueBright.raw(`http://localhost:${port}`))
-
+    serveMsg(port)
     checkVersion(api)
   })
 }

@@ -9,7 +9,7 @@ const colors = [
   'magenta',
   'cyan',
   'white',
-  'blackBright (alias: gray, grey)',
+  'blackBright',
   'redBright',
   'greenBright',
   'yellowBright',
