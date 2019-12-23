@@ -17,7 +17,7 @@ install:
   - npm link
 
 script:
-  - mdppt serve mdppt.md
+  - mdppt build mdppt.md
 
 after_script:
   - cd ./dist
