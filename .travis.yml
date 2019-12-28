@@ -9,12 +9,13 @@ install:
   - npm install lerna -g
   - npm install
   - npm run start
+  - cd site
 
 script:
-  - node ./packages/mdppt build mdppt.md
+  - node ../packages/mdppt build mdppt.md
 
 after_script:
-  - cd ./dist
+  - cd ../dist
   - echo 'mdppt.loadingmore.com' > CNAME
   - git init
   - git config user.name "BiYuqi"
