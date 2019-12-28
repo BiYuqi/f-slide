@@ -36,6 +36,14 @@ pre[class*="language-"] {
   right: 0;
   top: 0;
   opacity: .3;
+
+  &.dark {
+    opacity: .3;
+  }
+
+  &.darkLight {
+    opacity: .5;
+  }
 }
 
 [class*=bg-] .dark {
