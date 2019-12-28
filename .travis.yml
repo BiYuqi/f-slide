@@ -15,7 +15,7 @@ script:
   - node ../packages/mdppt build mdppt.md
 
 after_script:
-  - cd ../dist
+  - cd dist
   - echo 'mdppt.loadingmore.com' > CNAME
   - git init
   - git config user.name "BiYuqi"
