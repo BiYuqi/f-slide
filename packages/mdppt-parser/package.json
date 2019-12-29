@@ -9,6 +9,7 @@
   "author": "biyuqiwan@163.com",
   "license": "MIT",
   "dependencies": {
+    "@mdppt/utils": "^0.0.0",
     "handlebars": "^4.5.3",
     "highlight.js": "^9.16.2",
     "js-yaml": "^3.13.1",
