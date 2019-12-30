@@ -9,7 +9,7 @@ install:
   - npm install lerna -g
   - npm install
   - npm run start
-  - cd site
+  - cd website
 
 script:
   - node ../packages/mdppt build mdppt.md
