@@ -30,6 +30,8 @@ git clone https://github.com/ftbjs/mdppt.git
 
 cd mdppt
 
+npm i lerna -g
+
 npm install
 
 # install packages/ dependencies
