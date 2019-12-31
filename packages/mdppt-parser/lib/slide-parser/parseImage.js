@@ -20,7 +20,7 @@ module.exports = image => {
     return `<span class="background" style="background-image:url(${img});"></span>`
   }
 
-  if (!validateRE.test(temp.join(' '))) {
+  if (temp.length !== 2 && !validateRE.test(temp.join(' '))) {
     logger.yellowBright('The image pattern is not correct.')
     logger.green('The correct image is: 图片 类名')
   }
