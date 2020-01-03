@@ -1,8 +1,15 @@
+const markdownIt = require('markdown-it')
 const renderClass = require('./slide-parser/renderClass')
 const structuredSource = require('./slide-parser/structuredSource')
 const parseImage = require('./slide-parser/parseImage')
 
-module.exports = (md, context) => {
+const md = markdownIt()
+
+md.use(require('markdown-it-prism'))
+  .use(require('markdown-it-attrs'))
+  .use(require('./markdown/links'))
+
+module.exports = context => {
   const htmlResult = []
   const structuredSourceData = structuredSource(context)
 
