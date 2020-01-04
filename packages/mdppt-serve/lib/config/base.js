@@ -80,7 +80,7 @@ module.exports = api => ({
     new HtmlWebpackPlugin({
       template: api.getEntry(),
       filename: api.resolveCwd(api.context, `/${api.config.outputDir}/index.html`),
-      favicon: api.resolveLocal('../../public/favicon.ico'),
+      favicon: api.favicon,
       inject: true,
       templateParameters: (compilation, assets, pluginOptions) => {
         let stats

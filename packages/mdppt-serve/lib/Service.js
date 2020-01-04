@@ -5,6 +5,7 @@ const mdpptDefault = require('./mdppt.default.js')
 const resolveEntry = require('./util/resolveEntry')
 const resolveLocal = require('./util/resolveLocal')
 const resolveCwd = require('./util/resolveCwd')
+const resolveFavicon = require('./util/resolveFavicon')
 
 // Custom config
 function combineConfig(api) {
@@ -22,6 +23,7 @@ module.exports = class Service {
     this.resolveEntry = resolveEntry
     this.resolveLocal = resolveLocal
     this.resolveCwd = resolveCwd
+    this.favicon = resolveFavicon(this)
     // store the webpack config into the config field
     this.config = combineConfig(this)
 
