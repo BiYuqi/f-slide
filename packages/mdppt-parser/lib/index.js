@@ -11,6 +11,7 @@ md.use(require('markdown-it-prism'))
 
 module.exports = context => {
   const htmlResult = []
+  const zoomResult = []
   const structuredSourceData = structuredSource(context)
 
   if (structuredSourceData.length <= 0) {
@@ -29,12 +30,33 @@ module.exports = context => {
         </div>
       </section>
     `)
+
+    zoomResult.push(`
+      <li class="mdppt-zoom_item" data-slide="${i + 1}">
+        <div class="mdppt-zoom_item-inner">
+          <section ${renderClass(tempStructedData.slideContect.class, 'mdppt-zoom-slide')}>
+            ${parseImage(tempStructedData.slideContect.image)}
+            <div ${renderClass(tempStructedData.slideContect.subClass, 'mdppt-zoom-slide__sub')}>
+              ${md.render(tempStructedData.mdContent)}
+            </div>
+          </section>
+        </div>
+        <div class="mdppt-zoom_item-index">
+          ${i + 1}
+        </div>
+      </li>
+    `)
   }
 
   const html = `
     <div class="mdppt">
       <div class="mdppt-content">
         ${htmlResult.join('\n')}
+      </div>
+      <div class="mdppt-zoom">
+        <ul class="mdppt-zoom_content">
+          ${zoomResult.join('\n')}
+        </ul>
       </div>
       <div class="mdppt-action">
         <button class="mdppt-action__prev">Prev</button>

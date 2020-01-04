@@ -6,11 +6,14 @@ import './styles/index.scss'
 class Mdppt {
   constructor() {
     this.slideIndex = null
+    this.slideZoomModal = false
     this.slidePage = Event.selectAll('.mdppt-slide')
     this.slideLength = Event.length('.mdppt-slide')
     this.slideNextPage = Event.select('.mdppt-action__next')
     this.slidePrevPage = Event.select('.mdppt-action__prev')
     this.slideCount = Event.select('.mdppt-action__count')
+    this.slideZoomInWrapper = Event.select('.mdppt-zoom')
+    this.slideZoomItem = Event.selectAll('.mdppt-zoom_item')
     this.initSlideIndex()
     this.setPageNumber()
     this.init()
@@ -25,7 +28,7 @@ class Mdppt {
 
     Event.on(document, 'keydown', async event => {
       const { direct, isScope } = await Event.getDirection(event)
-      if (isScope) {
+      if (isScope && !this.slideZoomModal) {
         if (direct === 'next') {
           this.goNext()
         }
@@ -42,6 +45,25 @@ class Mdppt {
 
     Event.on(this.slidePrevPage, 'click', () => {
       this.goPrev()
+    })
+
+    Event.on(this.slideCount, 'click', () => {
+      this.slideZoomInWrapper.style.display = 'block'
+      for (let i = 0; i < this.slideLength; i++) {
+        const className = this.slideZoomItem[i].className
+        this.slideZoomItem[i].className = className.replace(/\s?active/, '')
+      }
+      this.slideZoomModal = true
+      this.slideZoomItem[this.slideIndex - 1].className += ' active'
+    })
+
+    this.slideZoomItem.forEach(item => {
+      Event.on(item, 'click', e => {
+        const index = item.getAttribute('data-slide')
+        this.setSlideIndex(index)
+        this.slideZoomInWrapper.style.display = 'none'
+        this.slideZoomModal = false
+      })
     })
 
     if (!this.slideIndex) {
