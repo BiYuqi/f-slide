@@ -41,8 +41,6 @@ class Event {
       })
     })
   }
-
-  go(dom, index) {}
 }
 
 export default new Event()

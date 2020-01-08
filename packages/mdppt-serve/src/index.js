@@ -1,6 +1,6 @@
 import '@babel/polyfill'
-import Event from './utils/event'
 import 'animate.css'
+import Event from './utils/event'
 import './styles/index.scss'
 
 class Mdppt {
