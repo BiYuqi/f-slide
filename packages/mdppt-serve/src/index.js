@@ -75,7 +75,7 @@ class Mdppt {
 
   setSlideIndex(index) {
     this.slideIndex = ~~index
-    window.location.href = `/#slide=${index}`
+    window.location.hash = `slide=${index}`
   }
 
   initSlideIndex() {
