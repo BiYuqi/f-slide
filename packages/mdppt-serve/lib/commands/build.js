@@ -1,5 +1,5 @@
 const webpack = require('webpack')
-const { logger, signature, checkVersion } = require('@mdppt/utils')
+const { logger, signature, buildMsg } = require('@mdppt/utils')
 const prodConfig = require('../config/build')
 const deleteBuildDir = require('../util/deleteBuildDir')
 
@@ -33,7 +33,6 @@ module.exports = api => {
         text: 'BUILD  SUCCESS'
       })
     )
-
-    checkVersion(api)
+    buildMsg({ api })
   })
 }

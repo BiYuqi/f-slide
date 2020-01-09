@@ -20,12 +20,21 @@ const checkVersion = async api => {
   if (!remoteVersion) {
     // hide the check update message when api fail
     // logger.yellow('Faild to check remove version.')
-    return false
+    return {
+      update: false,
+      tips: ''
+    }
   }
 
   if (currentVersion !== remoteVersion) {
-    logger.cyan(`Found a new version: ${remoteVersion}`)
-    logger.cyan(`Please run ${logger.green.raw('npm install mdppt -g')} to experient the new version.`)
+    const tips = [
+      logger.cyan.raw(`New version found: ${remoteVersion}.\n\n`),
+      logger.cyan.raw(`Please run ${logger.green.raw('npm install @mdppt/cli -g')} to install the new version.`)
+    ]
+    return {
+      update: true,
+      tips
+    }
   }
 }
 
