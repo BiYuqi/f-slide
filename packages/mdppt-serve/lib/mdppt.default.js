@@ -5,10 +5,6 @@ module.exports = {
 
   outputDir: 'dist',
 
-  assetsDir: 'assets',
-
-  indexPath: 'index.html',
-
   productionSourceMap: false,
 
   devServer: {
