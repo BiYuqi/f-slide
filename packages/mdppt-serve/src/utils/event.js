@@ -35,6 +35,14 @@ class Event {
         })
         return
       }
+
+      if (e && e.keyCode == 70) {
+        resolve({
+          direct: 'fullscreen',
+          isScope: true
+        })
+        return
+      }
       resolve({
         direct: '',
         isScope: false

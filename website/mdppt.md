@@ -7,9 +7,9 @@ codeStyle: 'toy'
 
 <slide class="bg-apple" :class="w60 auto alignCenter" image="https://mdppt-1254319003.cos.ap-chengdu.myqcloud.com/sea2.jpg darkLight">
 
-# M D P P T {.animated .fadeInUp .f60}
+# M D P P T {.f60}
 ---
-一个使用Markdown轻松创建漂亮的演示文稿的框架 {.animated .fadeInUp .delay-400 .sub-text}
+一个使用Markdown轻松创建漂亮的演示文稿的框架 {.animated .fadeInUp .delay-300 .sub-text}
 </slide>
 
 <slide :class="w40 auto alignCenter">
@@ -32,10 +32,21 @@ mdppt build mdppt.md
 
 ---
 - Keyboard Shortcuts {.animated .fadeInUp}
-- Style className {.animated .fadeInUp .delay-400}
-- Support Background Image {.animated .fadeInUp .delay-800} 
-- Support Animation {.animated .fadeInUp .delay-1200}
-- Support Build Mutliple Page {.animated .fadeInUp .delay-1400}
+- Style className {.animated .fadeInUp .delay-300}
+- Support Background Image {.animated .fadeInUp .delay-700} 
+- Support Animation {.animated .fadeInUp .delay-1000}
+- Support Build Mutliple Page {.animated .fadeInUp .delay-1200}
+</slide>
+
+<slide :class="w40 auto alignCenter">
+## Keyboard Shortcuts
+
+---
+- Page Next: ↓/→ {.animated .fadeInUp}
+- Page Prev: ↑/← {.animated .fadeInUp .delay-300}
+- FullScreen: F {.animated .fadeInUp .delay-500} 
+- Preview: -/+ {.animated .fadeInUp .delay-800}
+{.w70}
 </slide>
 
 <slide :class="w50 auto alignCenter">

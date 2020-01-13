@@ -36,6 +36,10 @@ class Mdppt {
         if (direct === 'prev') {
           this.goPrev()
         }
+
+        if (direct === 'fullscreen') {
+          this.toggleFullScreen()
+        }
       }
     })
 
@@ -132,6 +136,16 @@ class Mdppt {
 
   setPageNumber() {
     this.slideCount.innerHTML = `${this.slideIndex}/${this.slideLength}`
+  }
+
+  toggleFullScreen() {
+    if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen()
+    } else {
+      if (document.exitFullscreen) {
+        document.exitFullscreen()
+      }
+    }
   }
 }
 

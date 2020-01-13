@@ -28,21 +28,6 @@
       position: relative;
       z-index: 100;
     }
-
-    ul {
-      display: inline-block;
-      text-align: left;
-      list-style: disc;
-      width: auto;
-
-      li {
-        margin-bottom: 0.5rem;
-      }
-    }
-
-    ol li, ul li {
-      margin-left: 3.2rem;
-    }
   }
 
   &-action {
