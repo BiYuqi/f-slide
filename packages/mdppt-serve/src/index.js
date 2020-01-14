@@ -28,7 +28,8 @@ class Mdppt {
 
     Event.on(document, 'keydown', async event => {
       const { direct, isScope } = await Event.getDirection(event)
-      if (isScope && !this.slideZoomModal) {
+      if (!isScope) return
+      if (!this.slideZoomModal) {
         if (direct === 'next') {
           this.goNext()
         }
@@ -41,6 +42,15 @@ class Mdppt {
           this.toggleFullScreen()
         }
       }
+
+      if (direct === '-') {
+        this.slideZoomInWrapper.style.display = 'none'
+        this.slideZoomModal = false
+      }
+
+      if (direct === '+') {
+        this.zoomIn()
+      }
     })
 
     Event.on(this.slideNextPage, 'click', () => {
@@ -52,13 +62,7 @@ class Mdppt {
     })
 
     Event.on(this.slideCount, 'click', () => {
-      this.slideZoomInWrapper.style.display = 'block'
-      for (let i = 0; i < this.slideLength; i++) {
-        const className = this.slideZoomItem[i].className
-        this.slideZoomItem[i].className = className.replace(/\s?active/, '')
-      }
-      this.slideZoomModal = true
-      this.slideZoomItem[this.slideIndex - 1].className += ' active'
+      this.zoomIn()
     })
 
     this.slideZoomItem.forEach(item => {
@@ -146,6 +150,16 @@ class Mdppt {
         document.exitFullscreen()
       }
     }
+  }
+
+  zoomIn() {
+    this.slideZoomInWrapper.style.display = 'block'
+    for (let i = 0; i < this.slideLength; i++) {
+      const className = this.slideZoomItem[i].className
+      this.slideZoomItem[i].className = className.replace(/\s?active/, '')
+    }
+    this.slideZoomModal = true
+    this.slideZoomItem[this.slideIndex - 1].className += ' active'
   }
 }
 

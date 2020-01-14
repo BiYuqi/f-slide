@@ -43,6 +43,20 @@ class Event {
         })
         return
       }
+
+      if (e && e.keyCode === 189) {
+        resolve({
+          direct: '-',
+          isScope: true
+        })
+      }
+
+      if (e && e.keyCode === 187) {
+        resolve({
+          direct: '+',
+          isScope: true
+        })
+      }
       resolve({
         direct: '',
         isScope: false
