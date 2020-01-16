@@ -13,7 +13,7 @@ codeStyle: 'toy'
 </slide>
 
 <slide :class="w40 auto alignCenter">
-## Hot to use MDPPT?
+## How to use MDPPT?
 
 ---
 ```js
@@ -32,21 +32,21 @@ mdppt build mdppt.md
 
 ---
 - Keyboard Shortcuts {.animated .fadeInUp}
-- Style className {.animated .fadeInUp .delay-300}
-- Support Background Image {.animated .fadeInUp .delay-700} 
-- Support Animation {.animated .fadeInUp .delay-1000}
-- Support Build Mutliple Page {.animated .fadeInUp .delay-1200}
+- Style className {.animated .fadeInUp .delay-400}
+- Support Background Image {.animated .fadeInUp .delay-800} 
+- Support Animation {.animated .fadeInUp .delay-1200}
+- Support Build Mutliple Page {.animated .fadeInUp .delay-1400}
 </slide>
 
 <slide :class="w40 auto alignCenter">
 ## Keyboard Shortcuts
 
 ---
-- Page Next: ↓/→ {.animated .fadeInUp}
-- Page Prev: ↑/← {.animated .fadeInUp .delay-300}
-- FullScreen: F {.animated .fadeInUp .delay-500} 
-- Preview: -/+ {.animated .fadeInUp .delay-800}
-{.w70}
+- Page Next: ↓/→
+- Page Prev: ↑/←
+- FullScreen: F
+- Preview: -/+
+{.w70 .animated .fadeInUp}
 </slide>
 
 <slide :class="w50 auto alignCenter">
