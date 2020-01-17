@@ -1,4 +1,3 @@
-import '@babel/polyfill'
 import 'animate.css'
 import Event from './utils/event'
 import './styles/index.scss'

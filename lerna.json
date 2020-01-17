@@ -3,12 +3,6 @@
   "packages": [
     "packages/*"
   ],
-  "command": {
-    "bootstrap": {
-      "npmClientArgs": [
-          "--no-lockfile"
-      ]
-    }
-  },
+  "command": {},
   "version": "independent"
 }

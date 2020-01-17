@@ -13,7 +13,17 @@ module.exports = api => ({
         use: {
           loader: 'babel-loader',
           options: {
-            presets: [api.resolveLocal('../../node_modules/@babel/preset-env')]
+            presets: [api.resolveLocal('../../node_modules/@babel/preset-env')],
+            plugins: [
+              [
+                api.resolveLocal('../../node_modules/@babel/plugin-transform-runtime'),
+                {
+                  corejs: false,
+                  useESModules: true
+                }
+              ],
+              api.resolveLocal('../../node_modules/@babel/plugin-syntax-dynamic-import')
+            ]
           }
         }
       },
