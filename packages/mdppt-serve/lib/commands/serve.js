@@ -20,7 +20,8 @@ module.exports = async api => {
     hot: true,
     disableHostCheck: true,
     watchContentBase: true,
-    inline: true
+    inline: true,
+    liveReload: true
   }
 
   // set data to global api
@@ -41,7 +42,7 @@ module.exports = async api => {
   // set hot load json
   const defaultDevConfig = defaultsdeep({ devServer: api.config.devServer }, devConfig(api))
   const { port } = defaultDevConfig.devServer
-  const rawHotUrl = `webpack-dev-server/client?http://127.0.0.1:${port}/`
+  const rawHotUrl = `webpack-dev-server/client?http://localhost:${port}/`
   const entry = defaultDevConfig.entry[api.appName]
 
   if (typeof entry === 'string') {

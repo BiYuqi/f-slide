@@ -11,5 +11,5 @@ module.exports = api =>
       path: api.resolveCwd(api.context, api.config.outputDir),
       filename: '[name].js'
     },
-    plugins: [new webpack.HotModuleReplacementPlugin()]
+    plugins: [new webpack.NamedModulesPlugin(), new webpack.HotModuleReplacementPlugin()]
   })
