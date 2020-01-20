@@ -5,7 +5,10 @@ module.exports = {
 
   outputDir: 'dist',
 
-  productionSourceMap: false,
+  multiPages: false,
+
+  // For multi pages
+  pages: {},
 
   devServer: {
     host: 'localhost',
