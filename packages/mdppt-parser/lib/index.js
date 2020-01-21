@@ -11,10 +11,10 @@ md.use(markdownItPrism)
   .use(markdownItAttrs)
   .use(require('./markdown/links'))
 
-module.exports = context => {
+module.exports = ({ content, sideBarData }) => {
   const htmlResult = []
   const zoomResult = []
-  const structuredSourceData = structuredSource(context)
+  const structuredSourceData = structuredSource(content)
 
   if (structuredSourceData.length <= 0) {
     return {

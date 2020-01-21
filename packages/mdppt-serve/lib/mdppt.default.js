@@ -9,7 +9,8 @@ module.exports = {
   pages: {
     status: false,
     ignore: ['**/node_modules/**'],
-    entry: ''
+    entry: '',
+    sideBarData: []
   },
 
   devServer: {
