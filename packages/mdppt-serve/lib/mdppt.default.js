@@ -5,10 +5,12 @@ module.exports = {
 
   outputDir: 'dist',
 
-  multiPages: false,
-
   // For multi pages
-  pages: {},
+  pages: {
+    status: false,
+    ignore: ['**/node_modules/**'],
+    entry: ''
+  },
 
   devServer: {
     host: 'localhost',

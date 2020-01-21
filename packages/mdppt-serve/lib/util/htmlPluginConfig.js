@@ -18,7 +18,7 @@ const templateParameters = (compilation, assets, pluginOptions) => {
 
 module.exports = api => {
   // multiPages
-  if (!api.config.multiPages) {
+  if (!api.config.pages.status) {
     return [
       new HtmlWebpackPlugin({
         template: api.getEntry(),
@@ -31,29 +31,30 @@ module.exports = api => {
   }
 
   const options = {
-    ignore: ['**/node_modules/**']
+    ignore: api.config.pages.ignore
   }
+
   const currentEnvPath = process.cwd()
-  const markdownFiles = glob.sync(process.cwd() + '/**/*.md', options)
+  const markdownFiles = glob.sync(currentEnvPath + '/**/*.md', options)
 
   const modifyExtension = markdownFiles.map(entry => entry.replace(/\.md/, '.html'))
   const relativeMarkdownPath = markdownFiles.map(filte => filte.replace(currentEnvPath, ''))
   const relativeHtmlPath = modifyExtension.map(filte => filte.replace(currentEnvPath, ''))
 
-  const multiPages = []
-  relativeMarkdownPath.map((markdownEntry, index) => {
+  return relativeMarkdownPath.reduce((result, current, index) => {
     const filename = relativeHtmlPath[index].match(/([^\/]+)\.html/)[1]
-    multiPages.push(
+    const outputName = filename.indexOf(api.config.pages.entry) > -1 ? 'index' : filename
+
+    result.push(
       new HtmlWebpackPlugin({
-        template: './' + markdownEntry,
-        filename: filename + '.html',
+        template: '.' + current,
+        filename: outputName + '.html',
         favicon: api.favicon,
         inject: true,
         chunks: ['common', 'main', 'vendor', filename],
         templateParameters
       })
     )
-  })
-
-  return multiPages
+    return result
+  }, [])
 }
