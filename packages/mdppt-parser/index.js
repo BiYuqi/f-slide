@@ -9,11 +9,13 @@ const defaultConfig = require('./default')
 const template = fs.readFileSync(path.resolve(__dirname, './template/index.hbs')).toString()
 
 module.exports = function(content) {
-  const { sideBarData } = loaderUtils.getOptions(this)
+  const { navigation } = loaderUtils.getOptions(this)
   const globalSetting = { ...defaultConfig, ...parseYml(content) }
-  const { html } = parseMarkdown({ content, sideBarData })
+  const { html } = parseMarkdown({ content })
+
   const data = {
-    content: html
+    content: html,
+    navigation: JSON.stringify(navigation)
   }
   return handlebars.compile(template)({ ...globalSetting, ...data })
 }

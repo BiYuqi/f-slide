@@ -17,8 +17,8 @@ const templateParameters = (compilation, assets, pluginOptions) => {
 }
 
 module.exports = api => {
-  // multiPages
-  if (!api.config.pages.status) {
+  // single page
+  if (!api.config.pages.enable) {
     return [
       new HtmlWebpackPlugin({
         template: api.getEntry(),
@@ -30,6 +30,7 @@ module.exports = api => {
     ]
   }
 
+  // multiPages
   const options = {
     ignore: api.config.pages.ignore
   }
@@ -45,7 +46,7 @@ module.exports = api => {
     const filename = relativeHtmlPath[index].match(/([^\/]+)\.html/)[1]
     const outputName = filename.indexOf(api.config.pages.entry) > -1 ? 'index' : filename
 
-    api.config.pages.sideBarData.push(`${outputName}.html`)
+    api.config.pages.navigation.push(`${outputName}.html`)
 
     result.push(
       new HtmlWebpackPlugin({

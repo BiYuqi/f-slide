@@ -7,10 +7,10 @@ module.exports = {
 
   // For multi pages
   pages: {
-    status: false,
-    ignore: ['**/node_modules/**'],
     entry: '',
-    sideBarData: []
+    enable: false,
+    ignore: ['**/node_modules/**'],
+    navigation: []
   },
 
   devServer: {

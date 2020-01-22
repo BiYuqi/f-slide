@@ -11,7 +11,7 @@ md.use(markdownItPrism)
   .use(markdownItAttrs)
   .use(require('./markdown/links'))
 
-module.exports = ({ content, sideBarData }) => {
+module.exports = ({ content }) => {
   const htmlResult = []
   const zoomResult = []
   const structuredSourceData = structuredSource(content)

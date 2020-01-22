@@ -15,7 +15,7 @@ const resolveEntry = (entry, cmd) => {
   }
 
   if (entry && entry === '.') {
-    logger.yellow("Now it's multi-page mode.")
+    logger.yellow('🚀  Multi Page Mode Now.\n')
   }
 
   return {
