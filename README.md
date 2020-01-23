@@ -42,7 +42,7 @@ module.exports = {
   // For multi pages
   pages: {
     // Whether to open multi-page configuration
-    status: false,
+    enable: false,
     // ignore folders
     ignore: ['**/node_modules/**'],
     // specify a index page, use markdown file name
