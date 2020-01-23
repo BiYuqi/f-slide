@@ -5,7 +5,13 @@ module.exports = {
 
   outputDir: 'dist',
 
-  productionSourceMap: false,
+  // For multi pages
+  pages: {
+    entry: '',
+    enable: false,
+    ignore: ['**/node_modules/**'],
+    navigation: []
+  },
 
   devServer: {
     host: 'localhost',

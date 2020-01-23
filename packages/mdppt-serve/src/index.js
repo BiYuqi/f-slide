@@ -1,5 +1,6 @@
 import 'animate.css'
 import Event from './utils/event'
+import generageSideBar from './utils/generateSideBar'
 import './styles/index.scss'
 
 class Mdppt {
@@ -15,7 +16,9 @@ class Mdppt {
     this.slideZoomItem = Event.selectAll('.mdppt-zoom_item')
     this.initSlideIndex()
     this.setPageNumber()
+    generageSideBar()
     this.init()
+    this.navigation = Event.select('.mdppt-navigation')
   }
 
   init() {
@@ -49,6 +52,10 @@ class Mdppt {
 
       if (direct === '+') {
         this.zoomIn()
+      }
+
+      if (window.navigation.length && direct === 'expand') {
+        this.navigation.classList.toggle('active')
       }
     })
 

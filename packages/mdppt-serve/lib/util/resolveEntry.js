@@ -10,8 +10,12 @@ const resolveEntry = (entry, cmd) => {
   }
 
   if (!findExistSync(context, entry)) {
-    logger.red(`Faild to parse the markdown file.`)
+    logger.red('Faild to parse the markdown file.')
     process.exit(1)
+  }
+
+  if (entry && entry === '.') {
+    logger.yellow('🚀  Multi Page Mode Now.\n')
   }
 
   return {

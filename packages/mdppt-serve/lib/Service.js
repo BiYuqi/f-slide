@@ -1,6 +1,6 @@
 const path = require('path')
 const defaultsdeep = require('lodash.defaultsdeep')
-const { findExistSync } = require('@mdppt/utils')
+const { findExistSync, logger } = require('@mdppt/utils')
 const mdpptDefault = require('./mdppt.default.js')
 const resolveEntry = require('./util/resolveEntry')
 const resolveLocal = require('./util/resolveLocal')
@@ -32,6 +32,18 @@ module.exports = class Service {
 
     // command line info when user start serve or build
     this.args = options
+
+    if (!this.config.pages.enable && this.entry === '.') {
+      logger.red('🔨 Please configuration mdppt.config.js & set multi pages config.')
+      logger.green(`
+        module.exports = {
+          pages: {
+            enable: true
+          }
+        }
+      `)
+      process.exit(1)
+    }
   }
 
   getEntry() {

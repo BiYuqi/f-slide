@@ -57,6 +57,14 @@ class Event {
           isScope: true
         })
       }
+
+      if (e && e.keyCode === 69) {
+        resolve({
+          direct: 'expand',
+          isScope: true
+        })
+      }
+
       resolve({
         direct: '',
         isScope: false

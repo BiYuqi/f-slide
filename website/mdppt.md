@@ -19,11 +19,34 @@ codeStyle: 'toy'
 ```js
 npm install @mdppt/cli -g
 
-mdppt new mdppt.md
+// Help you quick create a standard markdown file.
+mdppt new
 
 mdppt serve mdppt.md
 
 mdppt build mdppt.md
+```
+</slide>
+
+<slide :class="w60 auto alignCenter">
+## How to start a multi page project?
+
+---
+1. Create a mdppt.config.js to start enable {.alignLeft}
+```js
+module.exports = {
+  pages: {
+    enable: true
+  }
+}
+```
+
+2. Excute below command in your project. {.alignLeft}
+
+```js
+mdppt serve .
+
+mdppt build .
 ```
 </slide>
 
@@ -46,6 +69,7 @@ mdppt build mdppt.md
 - Page Prev: ↑/←
 - FullScreen: F
 - Preview: -/+
+- Multi Pages Navigation: E
 {.w70 .animated .fadeInUp}
 </slide>
 

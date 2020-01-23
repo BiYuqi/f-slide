@@ -1,5 +1,5 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const htmlPluginConfig = require('../util/htmlPluginConfig')
 
 module.exports = api => ({
   entry: {
@@ -34,7 +34,10 @@ module.exports = api => ({
             loader: 'html-loader'
           },
           {
-            loader: '@mdppt/parser'
+            loader: '@mdppt/parser',
+            options: {
+              navigation: api.config.pages.navigation
+            }
           }
         ]
       },
@@ -86,26 +89,5 @@ module.exports = api => ({
   resolveLoader: {
     modules: ['node_modules', api.resolveLocal('../../node_modules')]
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: api.getEntry(),
-      filename: api.resolveCwd(api.context, `/${api.config.outputDir}/index.html`),
-      favicon: api.favicon,
-      inject: true,
-      templateParameters: (compilation, assets, pluginOptions) => {
-        let stats
-        return Object.assign({
-          get webpack() {
-            return stats || (stats = compilation.getStats().toJson())
-          },
-          compilation: compilation,
-          webpackConfig: compilation.options,
-          htmlWebpackPlugin: {
-            files: assets,
-            options: pluginOptions
-          }
-        })
-      }
-    })
-  ]
+  plugins: [...htmlPluginConfig(api)]
 })

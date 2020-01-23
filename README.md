@@ -1,9 +1,7 @@
 # Welcome to MDPPT 👋
-![0.0.0](https://img.shields.io/badge/version-0.0.0-blue.svg?cacheSeconds=2592000)
-[![Documentation](https://img.shields.io/badge/documentation-yes-brightgreen.svg)]( )
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/ftbjs/mdppt/blob/master/LICENSE)
+![0.0.0](https://img.shields.io/badge/version-0.0.0-blue.svg?cacheSeconds=2592000) [![Documentation](https://img.shields.io/badge/documentation-yes-brightgreen.svg)]( ) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/ftbjs/mdppt/blob/master/LICENSE)
 
-**(Still in coding, not release yet!)**
+**(Still under development! not release yet!)**
 > A framework for easily creating beautiful presentations using Markdown.
 
 ## [Homepage](https://github.com/ftbjs/mdppt)
@@ -17,13 +15,50 @@ npm i @mdppt/cli -g
 
 ## Usage
 
-```sh
+```js
  mdppt new <filename>
 
  mdppt serve <filename>
 
  mdppt build <filename>
 ```
+
+## Multi Pages
+
+```js
+ mdppt serve .
+
+ mdppt build .
+```
+
+## Custom configuration
+
+Root of project create a `mdppt.config.js` file.
+
+```js
+module.exports = {
+  baseUrl: '/',
+  outputDir: 'dist',
+  // For multi pages
+  pages: {
+    // Whether to open multi-page configuration
+    status: false,
+    // ignore folders
+    ignore: ['**/node_modules/**'],
+    // specify a index page, use markdown file name
+    entry: 'mdppt'
+  },
+
+  // webpack configuration
+  devServer: {
+    host: 'localhost',
+    port: 8080,
+    open: false,
+    hot: true
+  }
+}
+```
+
 ## Run in local
 ```sh
 git clone https://github.com/ftbjs/mdppt.git
