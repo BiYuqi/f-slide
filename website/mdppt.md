@@ -19,7 +19,8 @@ codeStyle: 'toy'
 ```js
 npm install @mdppt/cli -g
 
-mdppt new mdppt.md
+// Help you quick create a standard markdown file.
+mdppt new
 
 mdppt serve mdppt.md
 
