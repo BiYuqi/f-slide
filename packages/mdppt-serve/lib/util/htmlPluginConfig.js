@@ -1,5 +1,5 @@
-const glob = require('glob')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const glob = require('glob')
 
 const templateParameters = (compilation, assets, pluginOptions) => {
   let stats
@@ -18,7 +18,7 @@ const templateParameters = (compilation, assets, pluginOptions) => {
 
 module.exports = api => {
   // single page
-  if (!api.config.pages.enable) {
+  if (!api.config.pages.enable || (api.config.pages.enable && api.entry !== '.')) {
     return [
       new HtmlWebpackPlugin({
         template: api.getEntry(),
