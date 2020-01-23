@@ -27,6 +27,28 @@ mdppt build mdppt.md
 ```
 </slide>
 
+<slide :class="w60 auto alignCenter">
+## How to start a multi page project?
+
+---
+1. Create a mdppt.config.js to start enable {.alignLeft}
+```js
+module.exports = {
+  pages: {
+    enable: true
+  }
+}
+```
+
+2. Excute below command in your project. {.alignLeft}
+
+```js
+mdppt serve .
+
+mdppt build .
+```
+</slide>
+
 <slide class="bg-royal" :class="w40 auto alignCenter">
 ## Main Features
 
@@ -46,6 +68,7 @@ mdppt build mdppt.md
 - Page Prev: ↑/←
 - FullScreen: F
 - Preview: -/+
+- Multi Pages Navigation: E
 {.w70 .animated .fadeInUp}
 </slide>
 
