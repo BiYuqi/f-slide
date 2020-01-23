@@ -1,0 +1,60 @@
+.mdppt-navigation {
+  position: fixed;
+  top: 50%;
+  left: -100%;
+  transition: left .24s;
+  transform: translateY(-50%);
+  z-index: 999;
+  list-style: none;
+  background-color: #313A51;
+  padding: 15px 15px 15px 30px;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;;
+
+  &.active {
+    left: 0;
+
+    img {
+      left: 100px;
+    }
+  }
+  ul {
+    font-size: 18px;
+  }
+
+  li {
+    position: relative;
+    margin-left: 0;
+    margin-bottom: 10px;
+    &:after {
+      display: block;
+      content: '◇';
+      width: 2px;
+      height: 2px;
+      position: absolute;
+      top: 0;
+      left: -16px;
+      color: #fff;
+    }
+  }
+
+  a {
+    color: #fff;
+  }
+
+  &__expand {
+    position: absolute;
+    top: 50%;
+    left: 88px;
+    z-index: 998;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    transition: left .24s;
+    transform: translateY(-50%);
+
+    &:hover {
+      left: 100px;
+    }
+  }
+}
