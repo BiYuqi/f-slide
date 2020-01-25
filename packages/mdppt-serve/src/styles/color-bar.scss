@@ -1,0 +1,58 @@
+.color-bar {
+  list-style: none;
+  li {
+    margin-bottom: 15px;
+    margin-left: 0;
+  }
+
+  .magenta {
+    span {
+      background-color: #99334f;
+    }
+  }
+
+  .green {
+    span {
+      background-color: #49793a;
+    }
+  }
+
+  .cyan {
+    span {
+      background-color: #58bfb1;
+    }
+  }
+
+  .blue {
+    span {
+      background-color: #6281cf;
+    }
+  }
+
+  .purple {
+    span {
+      background-color: #9F4D95;
+    }
+  }
+
+  .yellow {
+    span {
+      background-color: #bbb137;
+    }
+  }
+
+  .red {
+    span {
+      background-color: #cb585e;
+    }
+  }
+
+  span {
+    display: inline-block;
+    padding: 15px 25px;
+    background-color: #293845;
+    border-radius: 63px;
+    color: #fff;
+    font-size: 16px;
+  }
+}

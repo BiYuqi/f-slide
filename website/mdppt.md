@@ -98,16 +98,52 @@ mdppt build .
 
 ```js
 module.exports = {
-  appName: 'main',
-
   baseUrl: '/',
-
   outputDir: 'dist',
-
-  assetsDir: 'assets'
-
+  pages: {
+    enable: true
+  },
+  devServer: {
+    port: 8080,
+    open: false
+  }
   ...
 }
 ```
+</slide>
 
+<slide class="w80 auto">
+### Color Bar {.alignCenter}
+
+---
+- :你喜欢拍照, 有一颗热爱生活的新: {.magenta .animated .fadeInUp}
+- :一亿像素, 五摄, 50倍混合数字变焦: {.blue .animated .fadeInUp .delay-400}
+- :超级旗舰机, 记录每一刻感动瞬间: {.cyan .animated .fadeInUp .delay-600}
+- :你向往远方，新奇又陌生是旅行的意义: {.purple .animated .fadeInUp .delay-800}
+- :5000mAh电量, 满足一天好奇探索: {.yellow .animated .fadeInUp .delay-1200}
+- :你追求个性, 拒绝千篇一律: {.green .animated .fadeInUp .delay-1400}
+- :双曲面玻璃机身, 面面与众不同: {.red .animated .fadeInUp .delay-1600}
+
+{.color-bar .w70 .auto .block}
+</slide>
+
+<slide class="w80 auto">
+### Color Bar implementation {.alignCenter}
+
+---
+
+- Specify a wrapper className for ul tag **color-bar**.
+- Set style ['magenta', 'blue', 'cyan', 'purple', 'yellow', 'red'].
+- Text should be wrap with `:`, It will rendered with <span> tag.
+
+```shell
+- :你喜欢拍照, 有一颗热爱生活的新: {.magenta .animated .fadeInUp}
+- :一亿像素, 五摄, 50倍混合数字变焦: {.blue .animated .fadeInUp .delay-400}
+- :超级旗舰机, 记录每一刻感动瞬间: {.cyan .animated .fadeInUp .delay-600}
+- :你向往远方，新奇又陌生是旅行的意义: {.purple .animated .fadeInUp .delay-800}
+- :5000mAh电量, 满足一天好奇探索: {.yellow .animated .fadeInUp .delay-1200}
+- :你追求个性, 拒绝千篇一律: {.green .animated .fadeInUp .delay-1400}
+- :双曲面玻璃机身, 面面与众不同: {.red .animated .fadeInUp .delay-1600}
+{.color-bar .w70 .auto .block}
+```
 </slide>
