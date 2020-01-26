@@ -11,6 +11,22 @@ codeStyle: tomorrow
 一个使用Markdown轻松创建漂亮的演示文稿的框架 {.animated .fadeInUp .delay-300 .sub-text}
 </slide>
 
+<slide class="w80 auto alignCenter">
+### About Me
+
+---
+
+Name | Version | Description | Language
+--------- | ---------- | ------ | ------ | ------
+mdppt | 0.0.0 | The Markdown Presentation Framework with markdown syntax.| Chinese
+webpack | 4.41.2 | webpack is a module bundler. Its main purpose is to bundle JavaScript files for usage in a browser, yet it is also capable of transforming, bundling, or packaging just about any resource or asset.| English
+webpack-cli | 3.3.10 | Webpack's Command Line Interface| English
+lerna | 3.15.0 | 🐉 A tool for managing JavaScript projects with multiple packages.| English
+markdown-it | 10.0.0 | Markdown parser, done right. 100% CommonMark support, extensions, syntax plugins & high speed | English
+
+{.w70 .auto}
+</slide>
+
 <slide :class="w40 auto alignCenter">
 ## How to use MDPPT?
 

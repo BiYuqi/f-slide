@@ -1,0 +1,58 @@
+$borderColor: #ebeef5;
+$bgColor: #f5f7fa;
+
+table {
+  display: table;
+  width: 100%;
+  overflow: auto;
+  border-spacing: 0;
+  border-collapse: collapse;
+  font-size: 16px;
+  border-color: grey;
+}
+
+table thead {
+  color: #909399;
+  font-weight: 500;
+}
+
+table th {
+  font-weight: 600
+}
+
+table td:nth-child(1) {
+  white-space: nowrap; 
+}
+
+table td,
+table th {
+  padding: 12px 10px;
+  min-width: 0;
+  box-sizing: border-box;
+  text-overflow: ellipsis;
+  vertical-align: middle;
+  position: relative;
+  text-align: left;
+  transition: background-color .25s ease;
+  border-bottom: 1px solid $borderColor;
+  border-right: 1px solid $borderColor;
+}
+
+table tr {
+  background-color: #fff;
+  border-top: 1px solid $borderColor;
+
+  &:hover {
+    td {
+      background-color: $bgColor;
+    }
+  }
+}
+table th:first-child,
+table td:first-child {
+  border-left: 1px solid $borderColor;
+}
+
+table tr:nth-child(2n) {
+  background-color: #fafafa;
+}
