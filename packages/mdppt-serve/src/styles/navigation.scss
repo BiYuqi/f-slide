@@ -2,44 +2,30 @@
   position: fixed;
   top: 50%;
   left: -100%;
+  width: auto;
   transition: left .24s;
   transform: translateY(-50%);
   z-index: 999;
   list-style: none;
   background-color: #313A51;
-  padding: 15px 15px 15px 30px;
+  padding: 15px;
   border-top-right-radius: 6px;
-  border-bottom-right-radius: 6px;;
+  border-bottom-right-radius: 6px;
 
   &.active {
     left: 0;
-
-    img {
-      left: 100px;
-    }
-  }
-  ul {
-    font-size: 18px;
-  }
-
-  li {
-    position: relative;
-    margin-left: 0;
-    margin-bottom: 10px;
-    &:after {
-      display: block;
-      content: '◇';
-      width: 2px;
-      height: 2px;
-      position: absolute;
-      top: 0;
-      left: -16px;
-      color: #fff;
-    }
   }
 
   a {
     color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    padding-left: 20px;
+
+    &:hover {
+      color: #6cb5fe;
+      text-decoration: underline;
+    }
   }
 
   &__expand {
@@ -56,5 +42,74 @@
     &:hover {
       left: 100px;
     }
+  }
+
+  ul {
+    list-style: none;
+    font-size: 18px;
+  }
+
+  li {
+    margin-left: 0;
+    margin-bottom: 6px;
+  }
+
+  .mdppt-sidebar {
+    display: block;
+    &__item {
+      position: relative;
+      overflow: hidden;
+
+      span {
+        color: #fff;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+      }
+
+      &.active {
+        overflow: auto;
+
+        .mdppt-sidebar__sub {
+          height: auto;
+        }
+
+        .arrow-svg {
+          transform: rotate(0deg);
+        }
+      }
+    }
+
+    &__sub {
+      display: block;
+      line-height: 1.2;
+      height: 0;
+      transition: height .25s ease;
+
+      li {
+        margin-bottom: 0;
+      }
+
+      a {
+        padding-left: 40px;
+      }
+    }
+  }
+
+  .arrow-svg,
+  .folder-svg {
+    width: 18px;
+    height: 18px;
+  }
+  .arrow-svg {
+    width: 14px;
+    height: 14px;
+    margin-right: 6px;
+    transform: rotate(-90deg);
+    transition: all .25s ease;
+  }
+  .folder-svg {
+    margin-right: 4px;
   }
 }

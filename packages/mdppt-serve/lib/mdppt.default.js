@@ -10,7 +10,8 @@ module.exports = {
     entry: '',
     enable: false,
     ignore: ['**/node_modules/**'],
-    navigation: []
+    navigation: [],
+    sideBarFolder: []
   },
 
   devServer: {

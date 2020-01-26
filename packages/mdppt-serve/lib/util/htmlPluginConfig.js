@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const glob = require('glob')
+const generageNavigation = require('./generageNavigation')
 
 const templateParameters = (compilation, assets, pluginOptions) => {
   let stats
@@ -46,7 +47,7 @@ module.exports = api => {
     const filename = relativeHtmlPath[index].match(/([^\/]+)\.html/)[1]
     const outputName = filename.indexOf(api.config.pages.entry) > -1 ? 'index' : filename
 
-    api.config.pages.navigation.push(`${outputName}.html`)
+    api.config.pages.sideBarFolder.push(generageNavigation(relativeMarkdownPath))
 
     result.push(
       new HtmlWebpackPlugin({

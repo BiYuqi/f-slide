@@ -36,7 +36,7 @@ module.exports = api => ({
           {
             loader: '@mdppt/parser',
             options: {
-              navigation: api.config.pages.navigation
+              navigationFolder: api.config.pages.sideBarFolder
             }
           }
         ]

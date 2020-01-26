@@ -54,7 +54,7 @@ class Mdppt {
         this.zoomIn()
       }
 
-      if (window.navigation.length && direct === 'expand') {
+      if (window.navigationFolder && direct === 'expand') {
         this.navigation.classList.toggle('active')
       }
     })
