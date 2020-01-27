@@ -1,9 +1,11 @@
 const webpack = require('webpack')
 const WebpackDevServer = require('webpack-dev-server')
 const portfinder = require('portfinder')
-const { logger, signature, serveMsg } = require('@mdppt/utils')
+const { logger, signature, serveMsg, ora } = require('@mdppt/utils')
 const defaultsdeep = require('lodash.defaultsdeep')
 const devConfig = require('../config/dev')
+
+const spinner = ora('👻Please wait a moment👻')
 
 module.exports = async api => {
   // output sinature
@@ -12,6 +14,8 @@ module.exports = async api => {
       text: 'MDPPT CLI'
     })
   )
+
+  spinner.start()
 
   const options = {
     contentBase: [api.resolveCwd(api.context, 'dist'), api.resolveCwd(api.context, api.getEntry())],
@@ -55,6 +59,7 @@ module.exports = async api => {
   const devServer = new WebpackDevServer(compiler, options)
 
   devServer.listen(port, 'localhost', () => {
+    spinner.stop()
     serveMsg({ port, api })
   })
 }

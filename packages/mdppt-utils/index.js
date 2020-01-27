@@ -7,6 +7,7 @@ const signature = require('./lib/signature')
 const checkVersion = require('./lib/checkVersion')
 const serveMsg = require('./lib/serveMsg')
 const buildMsg = require('./lib/buildMsg')
+const ora = require('./lib/ora')
 
 module.exports = {
   cwd,
@@ -17,5 +18,6 @@ module.exports = {
   signature,
   checkVersion,
   serveMsg,
-  buildMsg
+  buildMsg,
+  ora
 }
