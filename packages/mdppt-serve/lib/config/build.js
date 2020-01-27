@@ -1,12 +1,13 @@
 const webpack = require('webpack')
-const webpackMerge = require('webpack-merge')
+const WebpackMerge = require('webpack-merge')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const ProgressBarPlugin = require('progress-bar-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const baseWebpackConfig = require('./base')
 
 module.exports = api =>
-  webpackMerge(baseWebpackConfig(api), {
+  WebpackMerge(baseWebpackConfig(api), {
     mode: 'production',
     output: {
       publicPath: api.config.baseUrl,
@@ -49,7 +50,7 @@ module.exports = api =>
     },
     plugins: [
       new webpack.HashedModuleIdsPlugin(),
-
+      new ProgressBarPlugin(),
       new MiniCssExtractPlugin({
         filename: 'css/[name].css'
       })

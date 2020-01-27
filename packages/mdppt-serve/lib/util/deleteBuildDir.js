@@ -11,7 +11,7 @@ module.exports = api => {
       if (err) {
         logger.yellowBright(`Delete ${api.config.outputDir} faild.`)
       }
-      logger.greenBright(`\n🗑 Success Removed The Old ${api.config.outputDir} Diratory.\n`)
+      logger.cyan(`\n🚀 Success removed the old ${api.config.outputDir} diratory.\n`)
     })
   }
 }
