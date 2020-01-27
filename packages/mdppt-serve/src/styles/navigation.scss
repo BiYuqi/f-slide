@@ -8,7 +8,7 @@
   z-index: 999;
   list-style: none;
   background-color: #313A51;
-  padding: 15px;
+  padding: 15px 15px 15px 0;
   border-top-right-radius: 6px;
   border-bottom-right-radius: 6px;
 
@@ -25,6 +25,10 @@
     &:hover {
       color: #6cb5fe;
       text-decoration: underline;
+    }
+
+    &.active {
+      color: #23fff5;
     }
   }
 

@@ -1,59 +1,67 @@
 import Event from './event'
 import arrowSvg from '../svg/arrow.svg'
 import folerSvg from '../svg/folder.svg'
+console.log(window.location)
+
+const createUl = () => {
+  return document.createElement('ul')
+}
+
+const createLi = () => {
+  return document.createElement('li')
+}
+
+const createSpan = () => {
+  return document.createElement('span')
+}
 
 export default () => {
   const div = document.createElement('div')
   div.className = 'mdppt-navigation'
 
-  const createUl = () => {
-    return document.createElement('ul')
-  }
+  const outsideWrapper = createUl()
+  outsideWrapper.classList.add('mdppt-sidebar')
 
-  const createLi = () => {
-    return document.createElement('li')
-  }
-
-  const createSpan = () => {
-    return document.createElement('span')
-  }
-
-  const parentUls = createUl()
-  parentUls.classList.add('mdppt-sidebar')
   const folders = window.navigationFolder || {}
+  let pathName = window.location.pathname.replace(/(\/|\.html)/g, '')
+  if (!pathName || pathName === 'index') {
+    pathName = 'index'
+  }
+  const linkClassName = name => (pathName === name ? 'class="active"' : '')
+
   Object.keys(folders).forEach(item => {
     const parent = folders[item]
     const hasChilderen = folders[item].children.length > 0
     const children = folders[item].children
 
-    const parentLis = createLi()
-    parentLis.classList.add('mdppt-sidebar__item')
+    const outsideList = createLi()
+    outsideList.classList.add('mdppt-sidebar__item')
 
     if (hasChilderen) {
       let lis,
-        lisUls = createUl(),
-        lisSpan = createSpan()
+        innerWrapper = createUl(),
+        innerSpan = createSpan()
       lis = children.map(nav => {
-        return `<li class="mdppt-sidebar__sub-item"><a href="${nav}.html">${nav}</a></li>`
+        return `<li class="mdppt-sidebar__sub-item"><a ${linkClassName(nav)} href="${nav}.html">${nav}</a></li>`
       })
 
-      lisUls.classList.add('mdppt-sidebar__sub')
-      lisUls.innerHTML = lis.join('')
-      lisSpan.innerHTML = `
+      innerWrapper.classList.add('mdppt-sidebar__sub')
+      innerWrapper.innerHTML = lis.join('')
+      innerSpan.innerHTML = `
         <img src="${arrowSvg}" class="arrow-svg">
         <img src="${folerSvg}" class="folder-svg">
         ${parent.name}
       `
-      parentLis.appendChild(lisSpan)
-      parentLis.appendChild(lisUls)
-      parentUls.appendChild(parentLis)
+      outsideList.appendChild(innerSpan)
+      outsideList.appendChild(innerWrapper)
+      outsideWrapper.appendChild(outsideList)
     } else {
-      parentLis.innerHTML = `<a href="${parent.name}.html">${parent.name}</a>`
-      parentUls.appendChild(parentLis)
+      outsideList.innerHTML = `<a ${linkClassName(parent.name)} href="${parent.name}.html">${parent.name}</a>`
+      outsideWrapper.appendChild(outsideList)
     }
   })
 
-  div.appendChild(parentUls)
+  div.appendChild(outsideWrapper)
   document.body.appendChild(div)
 
   const folderBtn = Event.selectAll('.mdppt-sidebar__item span')
