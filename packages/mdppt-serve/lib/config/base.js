@@ -31,7 +31,10 @@ module.exports = api => ({
         test: /\.md$/,
         use: [
           {
-            loader: 'html-loader'
+            loader: 'html-loader',
+            options: {
+              minimize: true
+            }
           },
           {
             loader: '@mdppt/parser',
