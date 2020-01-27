@@ -44,6 +44,20 @@ module.exports = class Service {
       `)
       process.exit(1)
     }
+
+    if (!this.config.pages.entry) {
+      logger.red('🔨 Please specify a entry name for your project.')
+      logger.red('🔨 The name should be your markdown file name in your project.')
+      logger.green(`
+        module.exports = {
+          pages: {
+            enable: true,
+            entry: 'mdppt'
+          }
+        }
+      `)
+      process.exit(1)
+    }
   }
 
   getEntry() {

@@ -9,7 +9,9 @@ const extract = data => {
   return result
 }
 
-module.exports = navs => {
+const setEntry = (page, entry) => (page === entry ? 'index' : page)
+
+module.exports = (navs, entry) => {
   const result = navs.reduce((result, nav) => {
     result.push(extract(nav))
     return result
@@ -20,7 +22,7 @@ module.exports = navs => {
     const mid = result[i]
     if (mid.length === 1) {
       folderResult[mid[0]] = {
-        name: mid[0],
+        name: setEntry(mid[0], entry),
         children: []
       }
       continue
@@ -31,10 +33,10 @@ module.exports = navs => {
       if (!folderResult[key]) {
         folderResult[key] = {
           name: key,
-          children: [value]
+          children: [setEntry(value, entry)]
         }
       } else {
-        folderResult[key].children = [...folderResult[key].children, value]
+        folderResult[key].children = [...folderResult[key].children, setEntry(value, entry)]
       }
     }
   }
