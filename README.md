@@ -16,7 +16,7 @@ npm i @mdppt/cli -g
 ## Usage
 
 ```js
- mdppt new <filename>
+ mdppt new
 
  mdppt serve <filename>
 
