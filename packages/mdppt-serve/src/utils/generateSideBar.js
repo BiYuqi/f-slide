@@ -23,10 +23,14 @@ export default () => {
   outsideWrapper.classList.add('mdppt-sidebar')
 
   const folders = window.navigationFolder || {}
-  let pathName = window.location.pathname.replace(/(\/|\.html)/g, '')
-  if (!pathName || pathName === 'index') {
+  const matchPathName = window.location.pathname.match(/([^\/]+)\.html(#slide=\d+)?$/)
+  let pathName
+  if (!matchPathName || matchPathName[1] === 'index' || matchPathName[1] === '/') {
     pathName = 'index'
+  } else {
+    pathName = matchPathName[1]
   }
+
   const linkClassName = name => (pathName === name ? 'class="active"' : '')
 
   Object.keys(folders).forEach(item => {
@@ -38,15 +42,15 @@ export default () => {
     outsideList.classList.add('mdppt-sidebar__item')
 
     if (hasChilderen) {
-      let lis,
-        innerWrapper = createUl(),
-        innerSpan = createSpan()
-      lis = children.map(nav => {
+      const innerWrapper = createUl()
+      const innerSpan = createSpan()
+
+      const lis = children.map(nav => {
         return `
           <li class="mdppt-sidebar__sub-item">
             <span class="html-item">
               <img src="${htmlSvg}" class="html-svg">
-              <a ${linkClassName(nav)} href="${nav}.html">${nav}</a>
+              <a ${linkClassName(nav.name)} href="${nav.name}.html">${nav.display || nav.name}</a>
             </span>
           </li>`
       })
@@ -66,7 +70,7 @@ export default () => {
       outsideList.innerHTML = `
         <span class="html-item">
           <img src="${htmlSvg}" class="html-svg">
-          <a ${linkClassName(parent.name)} href="${parent.name}.html">${parent.name}</a>
+          <a ${linkClassName(parent.name)} href="${parent.name}.html">${parent.display || parent.name}</a>
         </span>
       `
       outsideWrapper.appendChild(outsideList)
