@@ -1,6 +1,6 @@
 const matchRule = /\/([a-zA-Z\d-]+)/g
 
-const extract = data => {
+const extractPageName = data => {
   let match,
     result = []
   while ((match = matchRule.exec(data))) {
@@ -13,9 +13,10 @@ const setEntry = (page, entry) => (page === entry ? 'index' : page)
 
 module.exports = (navs, entry) => {
   const result = navs.reduce((result, nav) => {
-    result.push(extract(nav))
+    result.push(extractPageName(nav))
     return result
   }, [])
+
   const folderResult = {}
 
   for (let i = 0; i < result.length; i++) {
@@ -43,6 +44,7 @@ module.exports = (navs, entry) => {
   const collectWithoutChild = []
   const collectWithChild = []
   const folderResultWithOrder = {}
+
   Object.keys(folderResult).forEach(item => {
     const hasChildren = folderResult[item].children.length > 0
     if (hasChildren) {

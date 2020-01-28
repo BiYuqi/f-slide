@@ -1,7 +1,7 @@
 import Event from './event'
 import arrowSvg from '../svg/arrow.svg'
 import folerSvg from '../svg/folder.svg'
-console.log(window.location)
+import htmlSvg from '../svg/html.svg'
 
 const createUl = () => {
   return document.createElement('ul')
@@ -42,7 +42,13 @@ export default () => {
         innerWrapper = createUl(),
         innerSpan = createSpan()
       lis = children.map(nav => {
-        return `<li class="mdppt-sidebar__sub-item"><a ${linkClassName(nav)} href="${nav}.html">${nav}</a></li>`
+        return `
+          <li class="mdppt-sidebar__sub-item">
+            <span class="html-item">
+              <img src="${htmlSvg}" class="html-svg">
+              <a ${linkClassName(nav)} href="${nav}.html">${nav}</a>
+            </span>
+          </li>`
       })
 
       innerWrapper.classList.add('mdppt-sidebar__sub')
@@ -52,11 +58,17 @@ export default () => {
         <img src="${folerSvg}" class="folder-svg">
         ${parent.name}
       `
+      outsideList.classList.add('mdppt-sidebar__folder')
       outsideList.appendChild(innerSpan)
       outsideList.appendChild(innerWrapper)
       outsideWrapper.appendChild(outsideList)
     } else {
-      outsideList.innerHTML = `<a ${linkClassName(parent.name)} href="${parent.name}.html">${parent.name}</a>`
+      outsideList.innerHTML = `
+        <span class="html-item">
+          <img src="${htmlSvg}" class="html-svg">
+          <a ${linkClassName(parent.name)} href="${parent.name}.html">${parent.name}</a>
+        </span>
+      `
       outsideWrapper.appendChild(outsideList)
     }
   })

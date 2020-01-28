@@ -19,8 +19,7 @@
   a {
     color: #fff;
     text-decoration: none;
-    font-size: 14px;
-    padding-left: 20px;
+    font-size: 16px;
 
     &:hover {
       color: #6cb5fe;
@@ -54,8 +53,7 @@
   }
 
   li {
-    margin-left: 0;
-    margin-bottom: 6px;
+    margin: 0;
   }
 
   .mdppt-sidebar {
@@ -63,13 +61,13 @@
     &__item {
       position: relative;
       overflow: hidden;
+      padding: 4px 0;
 
       span {
         color: #fff;
         cursor: pointer;
         display: flex;
         align-items: center;
-        font-size: 14px;
       }
 
       &.active {
@@ -85,20 +83,28 @@
       }
     }
 
+    &__folder {
+      padding-bottom: 0;
+    }
+
     &__sub {
       display: block;
       line-height: 1.2;
       height: 0;
       transition: height .25s ease;
 
-      li {
-        margin-bottom: 0;
+      &-item {
+        padding: 4px 0;
       }
 
-      a {
+      .html-item {
         padding-left: 40px;
       }
     }
+  }
+
+  .html-item {
+    padding-left: 20px;
   }
 
   .arrow-svg,
@@ -106,6 +112,12 @@
     width: 18px;
     height: 18px;
   }
+
+  .html-svg {
+    width: 15px;
+    height: 15px;
+  }
+
   .arrow-svg {
     width: 14px;
     height: 14px;
@@ -113,7 +125,9 @@
     transform: rotate(-90deg);
     transition: all .25s ease;
   }
-  .folder-svg {
+
+  .folder-svg,
+  .html-svg {
     margin-right: 4px;
   }
 }
