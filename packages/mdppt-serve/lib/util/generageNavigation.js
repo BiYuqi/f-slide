@@ -1,6 +1,7 @@
 const fs = require('fs')
 const path = require('path')
 const jsYaml = require('js-yaml')
+const { logger } = require('@mdppt/utils')
 
 const matchRule = /\/([a-zA-Z\d-]+)/g
 const matchYaml = /---([\s\S]+?)---/
@@ -25,6 +26,12 @@ const extractPageName = data => {
       display: sideBarTitle
     })
   }
+
+  if (result.length > 2) {
+    logger.yellow('🚦 Only supports up to two levels of directory structure.')
+    process.exit(1)
+  }
+
   return result
 }
 

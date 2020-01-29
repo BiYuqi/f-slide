@@ -5,7 +5,7 @@ const { logger, signature, serveMsg, ora } = require('@mdppt/utils')
 const defaultsdeep = require('lodash.defaultsdeep')
 const devConfig = require('../config/dev')
 
-const spinner = ora('👻Please wait a moment👻')
+const spinner = ora('👻 Please wait a moment... 👻\n')
 
 module.exports = async api => {
   // output sinature
@@ -59,7 +59,7 @@ module.exports = async api => {
   const devServer = new WebpackDevServer(compiler, options)
 
   devServer.listen(port, 'localhost', () => {
-    spinner.stop()
+    spinner.succeed()
     serveMsg({ port, api })
   })
 }
