@@ -16,7 +16,7 @@ npm i @mdppt/cli -g
 ## Usage
 
 ```js
- mdppt new <filename>
+ mdppt new
 
  mdppt serve <filename>
 
@@ -45,16 +45,14 @@ module.exports = {
     enable: false,
     // ignore folders
     ignore: ['**/node_modules/**'],
-    // specify a index page, use markdown file name
+    // specify a the markdown file name as index page [required]
     entry: 'mdppt'
   },
 
   // webpack configuration
   devServer: {
-    host: 'localhost',
     port: 8080,
-    open: false,
-    hot: true
+    open: false
   }
 }
 ```
