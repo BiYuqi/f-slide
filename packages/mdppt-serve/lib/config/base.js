@@ -13,6 +13,8 @@ module.exports = api => ({
         use: {
           loader: 'babel-loader',
           options: {
+            babelrc: false,
+            configFile: false,
             presets: [api.resolveLocal('../../node_modules/@babel/preset-env')],
             plugins: [
               [
