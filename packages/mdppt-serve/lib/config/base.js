@@ -1,5 +1,6 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const htmlPluginConfig = require('../util/htmlPluginConfig')
+const path = require('path')
 
 module.exports = api => ({
   entry: {
@@ -33,8 +34,16 @@ module.exports = api => ({
           {
             loader: 'html-loader',
             options: {
-              minimize: true
+              minimize: true,
+              removeComments: false,
+              collapseWhitespace: false,
+              interpolate: 'require'
+              // attrs: ['img:src', 'link:href']
+              // root: api.resolveCwd(api.context, '')
             }
+          },
+          {
+            loader: '@mdppt/image-loader'
           },
           {
             loader: '@mdppt/parser',
@@ -87,7 +96,10 @@ module.exports = api => ({
   resolve: {
     extensions: ['.js', '.jsx', '.json', '.md'],
     modules: ['node_modules', api.resolveLocal('../../node_modules')],
-    symlinks: false
+    symlinks: false,
+    alias: {
+      assets: path.resolve(process.cwd(), 'public')
+    }
   },
   resolveLoader: {
     modules: ['node_modules', api.resolveLocal('../../node_modules')]

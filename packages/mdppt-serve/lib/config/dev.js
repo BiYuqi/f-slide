@@ -2,8 +2,8 @@ const merge = require('webpack-merge')
 const webpack = require('webpack')
 const baseWebpackConfig = require('./base')
 
-module.exports = api =>
-  merge(baseWebpackConfig(api), {
+module.exports = api => {
+  return merge(baseWebpackConfig(api), {
     mode: 'development',
     devtool: 'inline-source-map',
     output: {
@@ -13,3 +13,4 @@ module.exports = api =>
     },
     plugins: [new webpack.NamedModulesPlugin(), new webpack.HotModuleReplacementPlugin()]
   })
+}
