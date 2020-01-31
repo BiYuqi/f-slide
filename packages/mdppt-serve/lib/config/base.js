@@ -1,4 +1,6 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const WebpackBar = require('webpackbar')
+const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')
 const htmlPluginConfig = require('../util/htmlPluginConfig')
 
 module.exports = api => ({
@@ -94,5 +96,12 @@ module.exports = api => ({
   resolveLoader: {
     modules: ['node_modules', api.resolveLocal('../../node_modules')]
   },
-  plugins: [...htmlPluginConfig(api)]
+  plugins: [
+    ...htmlPluginConfig(api),
+    new WebpackBar({
+      name: '🚚 MDPPT',
+      basic: false
+    }),
+    new FriendlyErrorsWebpackPlugin()
+  ]
 })
