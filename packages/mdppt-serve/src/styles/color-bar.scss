@@ -1,3 +1,5 @@
+@import './color';
+
 .color-bar {
   list-style: none;
   li {
@@ -7,43 +9,43 @@
 
   .magenta {
     span {
-      background-color: #99334f;
+      background-color: $magenta;
     }
   }
 
   .green {
     span {
-      background-color: #49793a;
+      background-color: $green;
     }
   }
 
   .cyan {
     span {
-      background-color: #58bfb1;
+      background-color: $cyan;
     }
   }
 
   .blue {
     span {
-      background-color: #6281cf;
+      background-color: $blue;
     }
   }
 
   .purple {
     span {
-      background-color: #9F4D95;
+      background-color: $purple;
     }
   }
 
   .yellow {
     span {
-      background-color: #bbb137;
+      background-color: $yellow;
     }
   }
 
   .red {
     span {
-      background-color: #cb585e;
+      background-color: $red;
     }
   }
 

@@ -1,3 +1,4 @@
+@import './color';
 @import './head';
 @import './table';
 
@@ -97,4 +98,10 @@ ul {
 
 ol li, ul li {
   margin-left: 3.2rem;
+}
+
+blockquote {
+  padding-left: 2.4rem;
+  color: $blockquote;
+  border-left: 4px solid $blockquoteBorderColor;
 }

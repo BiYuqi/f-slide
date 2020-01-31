@@ -27,7 +27,7 @@ markdown-it | 10.0.0 | Markdown parser, done right. 100% CommonMark support, ext
 {.w70 .auto}
 </slide>
 
-<slide :class="w40 auto alignCenter">
+<slide :class="w60 auto alignCenter">
 ## How to use MDPPT?
 
 ---
@@ -40,6 +40,13 @@ mdppt new
 mdppt serve mdppt.md
 
 mdppt build mdppt.md
+
+
+// multi pages
+
+mdppt serve .
+
+mdppt build .
 ```
 </slide>
 
@@ -148,7 +155,8 @@ module.exports = {
 
 ---
 
-- Specify a wrapper className for ul tag **color-bar**.
+> Specify a wrapper className for ul tag **color-bar**.
+
 - Set style ['magenta', 'blue', 'cyan', 'purple', 'yellow', 'red'].
 - Text should be wrap with `:`, It will rendered with <span> tag.
 

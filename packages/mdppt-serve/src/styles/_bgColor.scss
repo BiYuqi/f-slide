@@ -1,23 +1,5 @@
 @import './mixin';
-// 灰色
-$qianhui: #dad4cb;
-$zhonghui: #bbb5ac;
-
-// 黑色
-$bgBlack: #222831;
-$bgGray: #393e46;
-$bgDark: #eeeeee;
-$bgLightGreen: #00adb5;
-$bgRed: #c23;
-$bgBlue: #346;
-$bgGreen: #077;
-
-// linear-gradient
-$apple: linear-gradient(to bottom, #000 0%, #1a2028 50%, #293845 100%);
-$moon: linear-gradient(to bottom, #0f2027 0%,#203a43 50%, #2c5364 100%);
-$royal: linear-gradient(to bottom, rgb(20, 30, 48), rgb(36, 59, 85));
-$midNight: linear-gradient(to bottom, rgb(35, 37, 38), rgb(65, 67, 69));
-$mirage: linear-gradient(to bottom, rgb(22, 34, 42), rgb(58, 96, 115));
+@import './color';
 
 .bg {
   &-black {
