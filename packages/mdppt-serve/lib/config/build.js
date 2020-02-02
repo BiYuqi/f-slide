@@ -50,7 +50,8 @@ module.exports = api =>
     plugins: [
       new webpack.HashedModuleIdsPlugin(),
       new MiniCssExtractPlugin({
-        filename: 'css/[name].css'
+        filename: 'css/[name].[contenthash:8].css',
+        chunkFilename: 'css/[name].[contenthash:8].css'
       })
     ]
   })
