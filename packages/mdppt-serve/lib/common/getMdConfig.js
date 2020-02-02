@@ -9,6 +9,9 @@ module.exports = api => {
         }
       },
       {
+        loader: '@mdppt/image-loader'
+      },
+      {
         loader: '@mdppt/parser',
         options: {
           navigationFolder: api.config.pages.sideBarFolder

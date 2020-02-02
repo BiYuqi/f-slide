@@ -1,0 +1,31 @@
+{
+  "name": "@mdppt/image-loader",
+  "version": "0.0.0",
+  "description": "Image loader for mdppt.",
+  "keywords": [
+    "image-loader"
+  ],
+  "author": "BiYuqi <biyuqiwan@163.com>",
+  "homepage": "https://github.com/ftbjs/mdppt#readme",
+  "license": "MIT",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ftbjs/mdppt.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/ftbjs/mdppt/issues"
+  },
+  "dependencies": {
+    "@mdppt/utils": "^0.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

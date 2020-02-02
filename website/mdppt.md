@@ -58,7 +58,9 @@ mdppt build .
 ```js
 module.exports = {
   pages: {
-    enable: true
+    enable: true,
+    // [required] specify the default page name using markdown file name
+    entry: ''
   }
 }
 ```
@@ -124,7 +126,9 @@ module.exports = {
   baseUrl: '/',
   outputDir: 'dist',
   pages: {
-    enable: true
+    enable: true,
+    // [required] specify the default page name using markdown file name
+    entry: ''
   },
   devServer: {
     port: 8080,
