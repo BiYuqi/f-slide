@@ -1,6 +1,4 @@
 class Event {
-  constructor() {}
-
   on(dom, type, cb) {
     dom.addEventListener(type, cb, false)
   }
@@ -21,54 +19,62 @@ class Event {
   getDirection(event) {
     return new Promise((resolve, reject) => {
       const e = event || window.event
-      if (e && (e.keyCode == 40 || e.keyCode == 39)) {
+      if (!e) {
         resolve({
-          direct: 'next',
-          isScope: true
-        })
-        return
-      }
-      if ((e && e.keyCode == 37) || e.keyCode == 38) {
-        resolve({
-          direct: 'prev',
-          isScope: true
+          direct: '',
+          isScope: false
         })
         return
       }
 
-      if (e && e.keyCode == 70) {
-        resolve({
-          direct: 'fullscreen',
-          isScope: true
-        })
-        return
-      }
+      const keyCode = e.keyCode
 
-      if (e && e.keyCode === 189) {
-        resolve({
-          direct: '-',
-          isScope: true
-        })
+      switch (keyCode) {
+        case 39:
+        case 40:
+          resolve({
+            direct: 'next',
+            isScope: true
+          })
+          break
+        case 37:
+        case 38:
+          resolve({
+            direct: 'prev',
+            isScope: true
+          })
+          break
+        case 70:
+          resolve({
+            direct: 'fullscreen',
+            isScope: true
+          })
+          break
+        case 189:
+          resolve({
+            direct: '-',
+            isScope: true
+          })
+          break
+        case 187:
+          resolve({
+            direct: '+',
+            isScope: true
+          })
+          break
+        case 69:
+          resolve({
+            direct: 'expand',
+            isScope: true
+          })
+          break
+        default:
+          resolve({
+            direct: '',
+            isScope: false
+          })
+          break
       }
-
-      if (e && e.keyCode === 187) {
-        resolve({
-          direct: '+',
-          isScope: true
-        })
-      }
-
-      if (e && e.keyCode === 69) {
-        resolve({
-          direct: 'expand',
-          isScope: true
-        })
-      }
-
-      resolve({
-        direct: '',
-        isScope: false
-      })
     })
   }
 }
