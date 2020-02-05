@@ -46,11 +46,12 @@ export default () => {
       const innerSpan = createSpan()
 
       const lis = children.map(nav => {
+        const displayValue = nav.display || nav.name
         return `
           <li class="mdppt-sidebar__sub-item">
             <span class="html-item">
               <img src="${htmlSvg}" class="html-svg">
-              <a ${linkClassName(nav.name)} href="${nav.name}.html">${nav.display || nav.name}</a>
+              <a ${linkClassName(nav.name)} title="${displayValue}" href="${nav.name}.html">${displayValue}</a>
             </span>
           </li>`
       })
@@ -67,10 +68,11 @@ export default () => {
       outsideList.appendChild(innerWrapper)
       outsideWrapper.appendChild(outsideList)
     } else {
+      const displayValue = parent.display || parent.name
       outsideList.innerHTML = `
         <span class="html-item">
           <img src="${htmlSvg}" class="html-svg">
-          <a ${linkClassName(parent.name)} href="${parent.name}.html">${parent.display || parent.name}</a>
+          <a ${linkClassName(parent.name)} title="${displayValue}" href="${parent.name}.html">${displayValue}</a>
         </span>
       `
       outsideWrapper.appendChild(outsideList)

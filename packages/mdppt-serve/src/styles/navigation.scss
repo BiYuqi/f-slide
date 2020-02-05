@@ -1,10 +1,11 @@
 .mdppt-navigation {
   position: fixed;
-  top: 50%;
+  top: 0;
   left: -100%;
   width: auto;
+  max-width: 240px;
+  height: 100vh;
   transition: left .24s;
-  transform: translateY(-50%);
   z-index: 999;
   list-style: none;
   background-color: #313A51;
@@ -68,6 +69,7 @@
         cursor: pointer;
         display: flex;
         align-items: center;
+        user-select: none;
       }
 
       &.active {
@@ -105,6 +107,12 @@
 
   .html-item {
     padding-left: 20px;
+    
+    a {
+      overflow:hidden;
+      text-overflow:ellipsis;
+      white-space:nowrap
+    }
   }
 
   .arrow-svg,
