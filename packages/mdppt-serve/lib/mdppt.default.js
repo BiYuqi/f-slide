@@ -5,6 +5,9 @@ module.exports = {
 
   outputDir: 'dist',
 
+  // output assets files info
+  assets: false,
+
   // For multi pages
   pages: {
     entry: '',

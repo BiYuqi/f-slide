@@ -2,6 +2,7 @@ const webpack = require('webpack')
 const { logger, signature, buildMsg } = require('@mdppt/utils')
 const prodConfig = require('../config/build')
 const deleteBuildDir = require('../util/deleteBuildDir')
+const outputAssets = require('../util/outputAssets')
 
 module.exports = api => {
   api.config.mode = 'production'
@@ -14,8 +15,14 @@ module.exports = api => {
       throw err
     }
 
+    const info = stats.toJson()
+
     if (stats.hasErrors()) {
-      logger.red(`Mdppt project got build error. ${stats.toString()}`)
+      logger.red(`Mdppt project got build error. ${info.errors}`)
+    }
+
+    if (stats.hasWarnings()) {
+      logger.yellow(info.warnings)
     }
 
     process.stdout.write(
@@ -34,5 +41,9 @@ module.exports = api => {
       })
     )
     buildMsg({ api })
+
+    if (api.config.assets) {
+      outputAssets({ assets: info.assets, api })
+    }
   })
 }
