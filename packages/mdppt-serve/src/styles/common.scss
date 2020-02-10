@@ -105,3 +105,24 @@ blockquote {
   color: $blockquote;
   border-left: 4px solid $blockquoteBorderColor;
 }
+
+p code,
+li code {
+  padding: 2px 3px;
+  border: 1px solid #d4d4d4;
+  border-radius: 3px;
+  background-color: #efefef;
+  color: $mark;
+}
+
+a[target="_blank"] {
+  color: $link;
+  cursor: pointer;
+  font-weight: 400;
+  text-decoration: none;
+
+  &:hover {
+    color: $linkHover;
+    text-decoration: underline;
+  }
+}

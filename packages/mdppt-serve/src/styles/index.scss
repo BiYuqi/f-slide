@@ -1,11 +1,12 @@
-@import './reset.scss';
-@import './animation.scss';
-@import './common.scss';
+@import './reset';
+@import './animation';
+@import './common';
 @import './width';
+@import './padding';
 @import './bgColor';
 @import './size';
-@import './navigation.scss';
-@import './color-bar.scss';
+@import './navigation';
+@import './color-bar';
 
 .mdppt {
   height: 100vh;
@@ -26,6 +27,8 @@
     display: none;
     opacity: 0;
     transition: all .48s ease-in-out;
+    padding-top: 3.2rem;
+    padding-bottom: 3.2rem;
     &__sub {
       position: relative;
       z-index: 100;
