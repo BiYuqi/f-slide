@@ -115,6 +115,13 @@ li code {
   color: $mark;
 }
 
+.mdppt-zoom_item {
+  code {
+    border: 1px solid transparent;
+    background-color: transparent;
+  }
+}
+
 a[target="_blank"] {
   color: $link;
   cursor: pointer;
