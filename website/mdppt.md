@@ -24,11 +24,11 @@ webpack-cli | 3.3.10 | Webpack's Command Line Interface| English
 lerna | 3.15.0 | 🐉 A tool for managing JavaScript projects with multiple packages.| English
 markdown-it | 10.0.0 | Markdown parser, done right. 100% CommonMark support, extensions, syntax plugins & high speed | English
 
-{.w70 .auto}
+{.w80 .auto}
 </slide>
 
 <slide :class="w60 auto alignCenter">
-## How to use MDPPT?
+### How to use MDPPT?
 
 ---
 ```js
@@ -51,7 +51,7 @@ mdppt build .
 </slide>
 
 <slide :class="w60 auto alignCenter">
-## How to start a multi page project?
+### How to start a multi page project?
 
 ---
 1. Create a mdppt.config.js to start enable {.alignLeft}
@@ -75,7 +75,7 @@ mdppt build .
 </slide>
 
 <slide class="bg-royal" :class="w40 auto alignCenter">
-## Main Features
+### Main Features
 
 ---
 - Keyboard Shortcuts {.animated .fadeInUp}
@@ -86,19 +86,19 @@ mdppt build .
 </slide>
 
 <slide :class="w40 auto alignCenter">
-## Keyboard Shortcuts
+### Keyboard Shortcuts
 
 ---
-- Page Next: ↓/→
-- Page Prev: ↑/←
-- FullScreen: F
-- Preview: -/+
-- Multi Pages Navigation: E
+- Page Next\: ↓/→
+- Page Prev\: ↑/←
+- FullScreen\: F
+- Preview\: -/+
+- Multi Pages Navigation\: E
 {.w70 .animated .fadeInUp}
 </slide>
 
-<slide :class="w50 auto alignCenter">
-## How to add animation?
+<slide :class="w80 auto alignCenter">
+### How to add animation?
 
 ---
 ```js
@@ -114,11 +114,11 @@ mdppt build .
 ```
 </slide>
 
-<slide :class="w60 auto alignCenter">
-## Custom Configuration
+<slide :class="w80 auto">
+### Custom Configuration {.alignCenter}
 
 ---
-- Create a **mdppt.config.js** in the root.
+- Create a `mdppt.config.js` in the root.
 - Mdppt will auto load the file and combine them replace the default configuration.
 
 ```js
@@ -159,10 +159,10 @@ module.exports = {
 
 ---
 
-> Specify a wrapper className for ul tag **color-bar**.
+> Specify a wrapper className for ul tag `color-bar`.
 
-- Set style ['magenta', 'blue', 'cyan', 'purple', 'yellow', 'red'].
-- Text should be wrap with `:`, It will rendered with <span> tag.
+- Set style `['magenta', 'blue', 'cyan', 'purple', 'yellow', 'red']`.
+- Text should be wrap with `:`, It will rendered with `<span>` tag.
 
 ```shell
 - :你喜欢拍照, 有一颗热爱生活的新: {.magenta .animated .fadeInUp}
