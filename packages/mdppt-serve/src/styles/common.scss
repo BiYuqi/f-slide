@@ -89,7 +89,6 @@ ul {
   text-align: left;
   list-style: disc;
   width: auto;
-  font-size: 22px;
 
   li {
     margin-bottom: 0.5rem;
@@ -132,4 +131,8 @@ a[target="_blank"] {
     color: $linkHover;
     text-decoration: underline;
   }
+}
+
+img {
+  width: 100%;
 }
