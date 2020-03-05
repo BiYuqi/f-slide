@@ -3,6 +3,10 @@
   "packages": [
     "packages/*"
   ],
-  "command": {},
+  "command": {
+    "publishConfig": {
+      "access": "public"
+    }
+  },
   "version": "independent"
 }
