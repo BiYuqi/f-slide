@@ -4,11 +4,13 @@ meta: 据说是挺好用的markdown转化幻灯片工具
 codeStyle: tomorrow
 ---
 
-<slide class="bg-apple" :class="w60 auto alignCenter" image="https://mdppt-1254319003.cos.ap-chengdu.myqcloud.com/sea2.jpg darkLight">
+<slide class="bg-apple" :class="w60 auto alignCenter" image="/img/sea2.jpg darkLight">
 
 # M D P P T {.f60}
 ---
 一个使用Markdown轻松创建漂亮的演示文稿的框架 {.animated .fadeInUp .delay-300 .sub-text}
+
+![我是美丽的海洋](/img/sea2.jpg)
 </slide>
 
 <slide class="w80 auto alignCenter">

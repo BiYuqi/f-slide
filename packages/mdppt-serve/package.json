@@ -19,24 +19,24 @@
 	},
 	"homepage": "https://github.com/ftb/mdppt#readme",
 	"babel": {
-    "presets": [
-      [
-        "@babel/preset-env",
-        {
-          "targets": {
-            "browsers": [
-              "last 2 versions",
-              "Firefox ESR",
-              "> 1%",
-              "ie >= 8",
-              "iOS >= 8",
-              "Android >= 4"
-            ]
-          }
-        }
-      ]
-    ]
-  },
+		"presets": [
+			[
+				"@babel/preset-env",
+				{
+					"targets": {
+						"browsers": [
+							"last 2 versions",
+							"Firefox ESR",
+							"> 1%",
+							"ie >= 8",
+							"iOS >= 8",
+							"Android >= 4"
+						]
+					}
+				}
+			]
+		]
+	},
 	"dependencies": {
 		"@babel/core": "^7.7.2",
 		"@babel/plugin-syntax-dynamic-import": "^7.8.3",
@@ -48,6 +48,7 @@
 		"@mdppt/utils": "^0.0.0",
 		"animate.css": "^3.7.2",
 		"babel-loader": "^8.0.6",
+		"copy-webpack-plugin": "^6.0.1",
 		"cross-env": "^5.2.1",
 		"css-loader": "^2.1.1",
 		"ejs": "^2.7.4",

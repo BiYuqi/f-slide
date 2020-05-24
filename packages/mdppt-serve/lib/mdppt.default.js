@@ -5,6 +5,8 @@ module.exports = {
 
   outputDir: 'dist',
 
+  assets: 'static',
+
   // For multi pages
   pages: {
     entry: '',

@@ -15,12 +15,12 @@ module.exports = function(content) {
     return `<img src="" alt="${a}">`
   })
 
-  if (isMatch) {
-    logger.yellow(`Got Parse Error: ${logger.greenBright.raw('Local image files are not supported temporarily.')}`)
-    logger.yellow(
-      `Our Suggestion: ${logger.greenBright.raw('Please use online pictures temporarily, will be supported later.')}`
-    )
-  }
+  // if (isMatch) {
+  //   logger.yellow(`Got Parse Error: ${logger.greenBright.raw('Local image files are not supported temporarily.')}`)
+  //   logger.yellow(
+  //     `Our Suggestion: ${logger.greenBright.raw('Please use online pictures temporarily, will be supported later.')}`
+  //   )
+  // }
 
-  return result
+  return content
 }

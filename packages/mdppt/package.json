@@ -19,7 +19,7 @@
   "homepage": "https://github.com/ftb/mdppt#readme",
   "dependencies": {
     "@mdppt/serve": "^0.0.0",
-		"@mdppt/utils": "^0.0.0",
+    "@mdppt/utils": "^0.0.0",
     "commander": "^4.0.1",
     "fs-extra": "^8.1.0",
     "handlebars": "^4.5.3",
